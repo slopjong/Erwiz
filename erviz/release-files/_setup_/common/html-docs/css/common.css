@@ -1,0 +1,171 @@
+@charset "utf-8";
+
+#main-view {
+	margin: 0 0 0 10px;
+	zoom: 100%;
+}
+
+#main-view:after {
+	content: "";
+	clear: both;
+	display: block;
+	height: 0;
+	visibility: hidden;
+}
+
+#wide-sub-view {
+	width: 916px;
+}
+
+#narrow-sub-view {
+	float: right;
+	width: 722px;
+	margin: 0 -2px 0 10px;
+}
+
+
+div.section {
+	min-height: 400px;
+	margin: 0 10px 10px 0;
+	margin: 0;
+	width: 98%;
+	border-color: #CCCCCC;
+	border-width: 1px;
+	border-style: solid;
+	line-height: 100%;
+}
+
+div.section h1 {
+	background: #EBEBEB;
+	border-bottom: 1px solid #CCCCCC;
+	font-size: 110%;
+	font-weight: bold;
+	color: #666666;
+	vertical-align: center;
+	height: 2em;
+	line-height: 2em;
+	padding-left: 0.5em;
+}
+
+div.section p {
+	font-size: 100%;
+	margin: 0 0 1em 0;
+	padding: 0;
+}
+
+div.news_item {
+	margin : 0 0 15px 0; /* gap between items */
+}
+
+div.news_item div.news_date {
+	display: inline;
+	font-size: 110%;
+	color: #0099CC;
+	margin: 0;
+}
+
+div.news_item div.news_head {
+	display: inline;
+	font-size: 100%;
+	margin:0 0 0 5px;
+}
+
+div.news_item div.news_text {
+	font-size: 100%;
+	line-height: 120%;
+	margin: 2px 0 0 15px;
+}
+
+div.section p.mail {
+	font-size: 120%;
+	margin: 0;
+}
+
+div.section ul, div.section ol {
+	font-size: 100%;
+	line-height: 1.5em;
+	margin: 0 0 10px 0;
+}
+
+div.section ul {
+	margin-left: 1em;
+}
+
+div.section ol {
+	margin-left: 1.5em;
+}
+
+div.section li {
+	font-size: 100%;
+	line-height: 120%;
+}
+
+div.section div#content {
+	margin: 0;
+	padding: 10px;
+}
+
+div.normal-image {
+	text-align: left;
+	margin: 10px;
+}
+
+div.normal-image img {
+	border: solid 1px #A0A0A0;
+	padding: 0;
+}
+
+img.small_image {
+	border:1px solid;
+	margin:0 0 0 0;
+	height:150px;
+}
+
+/* license */
+pre.license {
+	font-size: 90%;
+	background-color: #EBEBEB;
+	border:solid 1px #A0A0A0;
+	padding: 10px;
+	margin:0;
+}
+
+div#license-ja {
+	margin: 10px 0 0 0;
+}
+
+
+/* counter *******************************************************************/
+
+div#counter {
+	width: 0;
+	height: 0;
+	margin: 0;
+	padding: 0;
+}
+
+div#counter img {
+	width: 0;
+	height: 0;
+	border: 0;
+}
+
+
+/* print *********************************************************************/
+
+@media print {
+	
+	#main-view, #wide-sub-view, #narrow-sub-view {
+		border-style: none;
+		float: left;
+	}
+	
+	#main-view, #wide-sub-view, #narrow-sub-view {
+		width: 85%;
+	}
+	
+	div.section, div.section h1 {
+		border-style: none;
+	}
+	
+}

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="content-script-type" content="text/javascript" />
+<meta http-equiv="content-style-type" content="text/css" />
+<meta http-equiv="imagetoolbar" content="no" />
+<link href="../../../../css/default.css" rel="stylesheet" type="text/css" />
+<link href="../../../../css/sample-pages.css" rel="stylesheet" type="text/css" />
+<link href="../../../../css/menu.css" rel="stylesheet" type="text/css" />
+<meta name="keywords" content="ERD,Entity Relationship Diagram,ER図,実体関連図,Graphviz,Erviz" />
+<meta name="description" content="Ervizのテキスト (チュートリアル 04)" />
+<title>Ervizのテキスト (チュートリアル 04)</title>
+</head>
+<body>
+
+<div id="container">
+	
+	<div id="header-links">
+		戻る： 
+				[<a href="../about.html">Ervizとは?</a>] 
+		[<a href="../samples.html">サンプルとチュートリアル</a>]
+	</div>
+	
+	<hr />
+	<div id="sample-links">
+		[<a href="./tutorial-03-txt.html">前の図</a>]
+		<span>
+		[
+		テキスト
+		 | <a href="./tutorial-04-ie-png.html">IE</a>
+		 | <a href="./tutorial-04-idef1x-png.html">IDEF1X</a>
+		]
+		</span>
+		[<a href="./tutorial-05-txt.html">次の図</a>]
+	</div>
+	
+	<div id="content">
+		<h1>Ervizのテキスト (チュートリアル 04)</h1>
+		
+		<pre><code><span class="comment">#</span>
+<span class="comment"># このファイルはErviz 1.0.4のサンプルテキストです。(Tutorial 04)</span>
+<span class="comment">#</span>
+
+<span class="comment"># </span>
+<span class="comment"># カーディナリティとオプショナリティ (任意)</span>
+<span class="comment"># </span>
+<span class="comment"># カーディナリティ記号が「?」の場合、以下のようになります。</span>
+<span class="comment">#   * カーディナリティは「1」である。</span>
+<span class="comment">#   * オプショナリティは「任意」である。</span>
+<span class="comment"># </span>
+<span class="comment"># カーディナリティ記号が「*」の場合、以下のようになります。</span>
+<span class="comment">#   * カーディナリティは「多」である。</span>
+<span class="comment">#   * オプショナリティは「任意」である。</span>
+<span class="comment"># </span>
+
+{title: &quot;カーディナリティとオプショナリティ (任意)&quot;}
+
+[社員]
+*社員ID
+ 社員名 (姓)
+ 社員名 (名)
+ 部署ID*
+
+[部署]
+*部署ID
+ 部署名
+
+[社員] *--? [部署]
+
+</code></pre>
+	</div>
+	<hr />
+	
+	<div id="footer-links">
+		戻る： 
+				[<a href="../about.html">Ervizとは?</a>] 
+		[<a href="../samples.html">サンプルとチュートリアル</a>]
+	</div>
+	
+</div>
+
+</body>
+</html>

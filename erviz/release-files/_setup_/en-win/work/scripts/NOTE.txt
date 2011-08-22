@@ -1,0 +1,10 @@
+This directory contains the utility scripts as follows:
+
+  * text2<image-type>-<notation>.cmd  - converts from text to image
+  * text2dot-<notation>.cmd           - converts from text to DOT
+  * dot2<image-type>.cmd              - converts from DOT to image
+  
+  Note: "<image-type>" is an image file type, that is, "png", "jpg", "svg", or "pdf".
+  Note: "<notation>" is an ERD notation, that is, "ie", "ie-strict" or "idef1x".
+
+See also "conversion.png".

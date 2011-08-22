@@ -1,0 +1,10 @@
+このディレクトリには、以下のユーティリティ・スクリプトが含まれます。
+
+  * text2<image-type>-<notation>.cmd  - テキストから画像に変換
+  * text2dot-<notation>.cmd           - テキストからDOTに変換
+  * dot2<image-type>.cmd              - DOTから画像に変換
+  
+  ※<image-type>は画像ファイル種別(png, jpg, svg, pdf)です。
+  ※<notation>はERDの表記法(ie, ie-strict, idef1x)です。
+
+「conversion.png」も参照してください。

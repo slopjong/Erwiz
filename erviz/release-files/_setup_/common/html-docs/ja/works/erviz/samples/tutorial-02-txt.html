@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="content-script-type" content="text/javascript" />
+<meta http-equiv="content-style-type" content="text/css" />
+<meta http-equiv="imagetoolbar" content="no" />
+<link href="../../../../css/default.css" rel="stylesheet" type="text/css" />
+<link href="../../../../css/sample-pages.css" rel="stylesheet" type="text/css" />
+<link href="../../../../css/menu.css" rel="stylesheet" type="text/css" />
+<meta name="keywords" content="ERD,Entity Relationship Diagram,ER図,実体関連図,Graphviz,Erviz" />
+<meta name="description" content="Ervizのテキスト (チュートリアル 02)" />
+<title>Ervizのテキスト (チュートリアル 02)</title>
+</head>
+<body>
+
+<div id="container">
+	
+	<div id="header-links">
+		戻る： 
+				[<a href="../about.html">Ervizとは?</a>] 
+		[<a href="../samples.html">サンプルとチュートリアル</a>]
+	</div>
+	
+	<hr />
+	<div id="sample-links">
+		[<a href="./tutorial-01-txt.html">前の図</a>]
+		<span>
+		[
+		テキスト
+		 | <a href="./tutorial-02-ie-png.html">IE</a>
+		 | <a href="./tutorial-02-idef1x-png.html">IDEF1X</a>
+		]
+		</span>
+		[<a href="./tutorial-03-txt.html">次の図</a>]
+	</div>
+	
+	<div id="content">
+		<h1>Ervizのテキスト (チュートリアル 02)</h1>
+		
+		<pre><code><span class="comment">#</span>
+<span class="comment"># このファイルはErviz 1.0.4のサンプルテキストです。(Tutorial 02)</span>
+<span class="comment">#</span>
+
+<span class="comment"># </span>
+<span class="comment"># リレーションシップ</span>
+<span class="comment"># </span>
+<span class="comment"># リレーションシップ行は以下の内容で構成されます。</span>
+<span class="comment">#   * 2つのエンティティ名 (通常は、それぞれが角括弧で囲まれています。)</span>
+<span class="comment">#   * エンティティ名の間に記述されるカーディナリティ文字列</span>
+<span class="comment"># </span>
+<span class="comment"># カーディナリティ文字列は、以下のような4つの文字で構成されます。</span>
+<span class="comment">#   * 1番目の文字は、1番目のエンティティに対するカーディナリティ記号です。</span>
+<span class="comment">#   * 2番目の文字は、常に「-」となります。</span>
+<span class="comment">#   * 3番目の文字は、常に「-」となります。</span>
+<span class="comment">#   * 4番目の文字は、2番目のエンティティに対するカーディナリティ記号です。</span>
+<span class="comment"># </span>
+<span class="comment"># 2つのカーディナリティ記号が両方とも「-」だった場合、カーディナリティが</span>
+<span class="comment"># 指定されなかった事を示します。その他のカーディナリティ記号については、</span>
+<span class="comment"># 他のファイルで説明します。</span>
+<span class="comment"># </span>
+
+{title: &quot;リレーションシップ&quot;}
+
+[受注] ---- [受注明細]
+
+</code></pre>
+	</div>
+	<hr />
+	
+	<div id="footer-links">
+		戻る： 
+				[<a href="../about.html">Ervizとは?</a>] 
+		[<a href="../samples.html">サンプルとチュートリアル</a>]
+	</div>
+	
+</div>
+
+</body>
+</html>

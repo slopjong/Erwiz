@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="content-script-type" content="text/javascript" />
+<meta http-equiv="content-style-type" content="text/css" />
+<meta http-equiv="imagetoolbar" content="no" />
+<link href="../../../../css/default.css" rel="stylesheet" type="text/css" />
+<link href="../../../../css/sample-pages.css" rel="stylesheet" type="text/css" />
+<link href="../../../../css/menu.css" rel="stylesheet" type="text/css" />
+<meta name="keywords" content="ERD,Entity Relationship Diagram,Graphviz,Erviz" />
+<meta name="description" content="A text data for Erviz (Tutorial 01)" />
+<title>A text data for Erviz (Tutorial 01)</title>
+</head>
+<body>
+
+<div id="container">
+	
+	<div id="header-links">
+		Back to 
+				[<a href="../about.html">What is Erviz?</a>] 
+		[<a href="../samples.html">Samples and Tutorials</a>]
+	</div>
+	
+	<hr />
+	<div id="sample-links">
+		[<a href="./sample-txt.html">Preveous Diagram</a>]
+		<span>
+		[
+		Text
+		 | <a href="./tutorial-01-ie-png.html">IE</a>
+		 | <a href="./tutorial-01-idef1x-png.html">IDEF1X</a>
+		]
+		</span>
+		[<a href="./tutorial-02-txt.html">Next Diagram</a>]
+	</div>
+	
+	<div id="content">
+		<h1>A text data for Erviz (Tutorial 01)</h1>
+		
+		<pre><code><span class="comment">#</span>
+<span class="comment"># This is a sample text file for Erviz 1.0.4. (Tutorial 01)</span>
+<span class="comment">#</span>
+
+<span class="comment"># </span>
+<span class="comment"># Entities</span>
+<span class="comment"># </span>
+<span class="comment"># The definition of an entity starts with the entity name which is normally enclosed by square brackets.</span>
+<span class="comment"># An entity name line can be followed by attribute name lines.</span>
+<span class="comment"># </span>
+<span class="comment"># An attribute name line can contain key symbols as follows:</span>
+<span class="comment">#   * The left side &quot;*&quot; of the name indicates that it is a primary key or a part of compound primary key.</span>
+<span class="comment">#   * The right side &quot;*&quot; of the name indicates that it is a foreign key.</span>
+<span class="comment"># </span>
+<span class="comment"># The attribute name lines are terminated by any of the following:</span>
+<span class="comment">#   * A blank line</span>
+<span class="comment">#   * A next entity name</span>
+<span class="comment">#   * A relationship line (which will be explained in other sample files)</span>
+<span class="comment">#   * EOF (end of file)</span>
+<span class="comment"># </span>
+<span class="comment"># The definition of an entity is omissible if all of the following contidions are satisfied:</span>
+<span class="comment">#  * The entity name is appeared in the definition of a relationship.</span>
+<span class="comment">#  * The entity doesn't have any attributes.</span>
+<span class="comment">#  * The entity doesn't have any options.</span>
+<span class="comment"># </span>
+
+{title: &quot;An Entity&quot;}
+
+[Order]
+*Order ID
+ Customer ID*
+ Order Date
+ Employee ID*
+
+</code></pre>
+	</div>
+	<hr />
+	
+	<div id="footer-links">
+		Back to 
+				[<a href="../about.html">What is Erviz?</a>] 
+		[<a href="../samples.html">Samples and Tutorials</a>]
+	</div>
+	
+</div>
+
+</body>
+</html>

@@ -1,0 +1,3 @@
+fontsize = 12
+fontcolor = black
+style = filled

@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="content-script-type" content="text/javascript" />
+<meta http-equiv="content-style-type" content="text/css" />
+<meta http-equiv="imagetoolbar" content="no" />
+<link href="../../../../css/default.css" rel="stylesheet" type="text/css" />
+<link href="../../../../css/sample-pages.css" rel="stylesheet" type="text/css" />
+<link href="../../../../css/menu.css" rel="stylesheet" type="text/css" />
+<link href="../../../../css/tables.css" rel="stylesheet" type="text/css" />
+<meta name="keywords" content="ERD,Entity Relationship Diagram,ER図,実体関連図,Erviz,カーディナリティ" />
+<meta name="description" content="Ervizによるエンティティ依存関係の解析" />
+<title>Ervizによるエンティティ依存関係の解析</title>
+</head>
+<body>
+
+<div id="container">
+	
+	<div id="header-links">
+		戻る： 
+				[<a href="../about.html">Ervizとは?</a>] 
+		[<a href="../references.html">リファレンス</a>]
+	</div>
+	
+	<hr />
+	<div id="sample-links">
+		[<a href="./dependency-of-entity.html">前のページ</a>]
+		<span>
+		[2 / 6]
+		</span>
+		[<a href="./cardinality-symbols.html">次のページ</a>]
+	</div>
+	
+	<table id="parsing-dependency" summary="Ervizによるエンティティ依存関係の解析">
+		
+		<caption>Ervizによるエンティティ依存関係の解析</caption>
+		<tr>
+			<th rowspan="2">X 対 X</th>
+			<th rowspan="2">Ervizのテキスト</th>
+			<th colspan="3">解析結果</th>
+			<th rowspan="2">備考</th>
+		</tr>
+		
+		<tr>
+			<th>依存関係</th>
+			<th colspan="2">親/子 (1番目, 2番目)</th>
+		</tr>
+		
+		<tr>
+			<td rowspan="4" class="x-to-x">1 対 1</td>
+			<td class="rel-text">[E1] x--x [E2]</td>
+			<td class="dependency">非依存</td>
+			<td class="parent-or-child">親</td>
+			<td class="parent-or-child">子</td>
+			<td class="remarks">1番目のエンティティを親とみなす</td>
+		</tr>
+		
+		<tr>
+			<td class="rel-text">[E1] x--x (E2)</td>
+			<td class="dependency">依存</td>
+			<td class="parent-or-child">親</td>
+			<td class="parent-or-child">子</td>
+			<td class="remarks"></td>
+		</tr>
+		
+		<tr>
+			<td class="rel-text">(E1) x--x [E2]</td>
+			<td class="dependency">依存</td>
+			<td class="parent-or-child">子</td>
+			<td class="parent-or-child">親</td>
+			<td class="remarks"></td>
+		</tr>
+		
+		<tr>
+			<td class="rel-text">その他</td>
+			<td class="dependency">N/A</td>
+			<td class="parent-or-child">N/A</td>
+			<td class="parent-or-child">N/A</td>
+			<td class="remarks">文法エラー</td>
+		</tr>
+		
+		<tr>
+			<td  rowspan="3" class="x-to-x">1 対 多</td>
+			<td class="rel-text">[E1] x--x [E2]</td>
+			<td class="dependency">非依存</td>
+			<td class="parent-or-child">親</td>
+			<td class="parent-or-child">子</td>
+			<td class="remarks"></td>
+		</tr>
+		
+		<tr>
+			<td class="rel-text">[E1] x--x (E2)</td>
+			<td class="dependency">依存</td>
+			<td class="parent-or-child">親</td>
+			<td class="parent-or-child">子</td>
+			<td class="remarks"></td>
+		</tr>
+		
+		<tr>
+			<td class="rel-text">その他</td>
+			<td class="dependency">N/A</td>
+			<td class="parent-or-child">N/A</td>
+			<td class="parent-or-child">N/A</td>
+			<td class="remarks">文法エラー</td>
+		</tr>
+		
+		<tr>
+			<td rowspan="3" class="x-to-x">多 対 1</td>
+			<td class="rel-text">[E1] x--x [E2]</td>
+			<td class="dependency">非依存</td>
+			<td class="parent-or-child">子</td>
+			<td class="parent-or-child">親</td>
+			<td class="remarks"></td>
+		</tr>
+		
+		<tr>
+			<td class="rel-text">(E1) x--x [E2]</td>
+			<td class="dependency">依存</td>
+			<td class="parent-or-child">子</td>
+			<td class="parent-or-child">親</td>
+			<td class="remarks"></td>
+		</tr>
+		
+		<tr>
+			<td class="rel-text">その他</td>
+			<td class="dependency">N/A</td>
+			<td class="parent-or-child">N/A</td>
+			<td class="parent-or-child">N/A</td>
+			<td class="remarks">文法エラー</td>
+		</tr>
+		
+		<tr>
+			<td rowspan="2" class="x-to-x">多 対 多</td>
+			<td class="rel-text">[E1] x--x [E2]</td>
+			<td class="dependency">指定なし</td>
+			<td class="parent-or-child">子</td>
+			<td class="parent-or-child">子</td>
+			<td class="remarks"></td>
+		</tr>
+		
+		<tr>
+			<td class="rel-text">その他</td>
+			<td class="dependency">N/A</td>
+			<td class="parent-or-child">N/A</td>
+			<td class="parent-or-child">N/A</td>
+			<td class="remarks">文法エラー</td>
+		</tr>
+		
+		<tr>
+			<td rowspan="4" class="x-to-x">指定なし (両側)</td>
+			<td class="rel-text">[E1] x--x [E2]</td>
+			<td class="dependency">不明</td>
+			<td class="parent-or-child">不明</td>
+			<td class="parent-or-child">不明</td>
+			<td class="remarks"></td>
+		</tr>
+		
+		<tr>
+			<td class="rel-text">[E1] x--x (E2)</td>
+			<td class="dependency">依存</td>
+			<td class="parent-or-child">親</td>
+			<td class="parent-or-child">子</td>
+			<td class="remarks"></td>
+		</tr>
+		
+		<tr>
+			<td class="rel-text">(E1) x--x [E2]</td>
+			<td class="dependency">依存</td>
+			<td class="parent-or-child">子</td>
+			<td class="parent-or-child">親</td>
+			<td class="remarks"></td>
+		</tr>
+		
+		<tr>
+			<td class="rel-text">その他</td>
+			<td class="dependency">N/A</td>
+			<td class="parent-or-child">N/A</td>
+			<td class="parent-or-child">N/A</td>
+			<td class="remarks">文法エラー</td>
+		</tr>
+		
+		<tr>
+			<td rowspan="1" class="x-to-x">指定なし (片側)</td>
+			<td class="rel-text">-</td>
+			<td class="dependency">N/A</td>
+			<td class="parent-or-child">N/A</td>
+			<td class="parent-or-child">N/A</td>
+			<td class="remarks">文法エラー</td>
+		</tr>
+	</table>
+	
+	<hr />
+	
+	<div id="footer-links">
+		戻る： 
+		[<a href="../../../index.html">Home</a>] 
+		[<a href="../about.html">Ervizとは?</a>] 
+		[<a href="../references.html">リファレンス</a>]
+	</div>
+	
+</div> <!-- container -->
+</body>
+</html>

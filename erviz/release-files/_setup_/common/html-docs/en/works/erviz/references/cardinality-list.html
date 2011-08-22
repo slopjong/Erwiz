@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="content-script-type" content="text/javascript" />
+<meta http-equiv="content-style-type" content="text/css" />
+<meta http-equiv="imagetoolbar" content="no" />
+<link href="../../../../css/default.css" rel="stylesheet" type="text/css" />
+<link href="../../../../css/sample-pages.css" rel="stylesheet" type="text/css" />
+<link href="../../../../css/menu.css" rel="stylesheet" type="text/css" />
+<link href="../../../../css/tables.css" rel="stylesheet" type="text/css" />
+<meta name="keywords" content="ERD,Entity Relationship Diagram,Graphviz,Erviz,Cardinality,IE,IDEF1X" />
+<meta name="description" content="The Possible Relationships between Two Entities" />
+<title>The Possible Relationships between Two Entities</title>
+</head>
+<body>
+
+<div id="container">
+	
+	<div id="header-links">
+		Back to 
+				[<a href="../about.html">What is Erviz?</a>] 
+		[<a href="../references.html">Referenses</a>]
+	</div>
+	
+	<hr />
+	<div id="sample-links">
+		[<a href="./cardinality-symbols.html">Previous Page</a>]
+		<span>
+		[4 of 6]
+		</span>
+		[<a href="./options.html">Next Page</a>]
+	</div>
+	
+	<table id="cardinality-list" summary="The Possible Relationships between Two Entities">
+		
+		<caption>The Possible Relationships between Two Entities</caption>
+		<tr>
+			<th>X to X</th>
+			<th>Dependency</th>
+			<th>Erviz Text</th>
+			<th>ERD (IE)</th>
+			<th>ERD (IDEF1X)</th>
+			<th>Remarks</th>
+		</tr>
+		<tr>
+			<td class="x-to-x" rowspan="12">One to One</td>
+			<td class="dependency" rowspan="4">Non-Identifying</td>
+			<td class="rel-text">[E1] 1--1 [E2]</td>
+			<td class="erd-image"><img src="../../../../images/common/erviz/cardinality-images/1m-1m-nid-ie.png" title="1m-1m-nid-ie.png" alt="1m-1m-nid-ie.png" /></td>
+			<td class="erd-image"><img src="../../../../images/common/erviz/cardinality-images/1m-1m-nid-idef1x.png" title="1m-1m-nid-idef1x.png" alt="1m-1m-nid-idef1x.png" /></td>
+			<td class="remakrs">Erviz regards the first entity as the parent.</td>
+		</tr>
+		<tr>
+			<td class="rel-text">[E1] 1--? [E2]</td>
+			<td class="erd-image"><img src="../../../../images/common/erviz/cardinality-images/1m-1o-nid-ie.png" title="1m-1o-nid-ie.png" alt="1m-1o-nid-ie.png" /></td>
+			<td class="erd-image"><img src="../../../../images/common/erviz/cardinality-images/1m-1o-nid-idef1x.png" title="1m-1o-nid-idef1x.png" alt="1m-1o-nid-idef1x.png" /></td>
+			<td class="remakrs">Erviz regards the first entity as the parent.</td>
+		</tr>
+		<tr>
+			<td class="rel-text">[E1] ?--1 [E2]</td>
+			<td class="erd-image"><img src="../../../../images/common/erviz/cardinality-images/1o-1m-nid-ie.png" title="1o-1m-nid-ie.png" alt="1o-1m-nid-ie.png" /></td>
+			<td class="erd-image"><img src="../../../../images/common/erviz/cardinality-images/1o-1m-nid-idef1x.png" title="1o-1m-nid-idef1x.png" alt="1o-1m-nid-idef1x.png" /></td>
+			<td class="remakrs">Erviz regards the first entity as the parent.</td>
+		</tr>
+		<tr>
+			<td class="rel-text">[E1] ?--? [E2]</td>
+			<td class="erd-image"><img src="../../../../images/common/erviz/cardinality-images/1o-1o-nid-ie.png" title="1o-1o-nid-ie.png" alt="1o-1o-nid-ie.png" /></td>
+			<td class="erd-image"><img src="../../../../images/common/erviz/cardinality-images/1o-1o-nid-idef1x.png" title="1o-1o-nid-idef1x.png" alt="1o-1o-nid-idef1x.png" /></td>
+			<td class="remakrs">Erviz regards the first entity as the parent.</td>
+		</tr>
+		<tr>
+			<td class="dependency" rowspan="4">Identifying<br />(independent : the 1st)</td>
+			<td class="rel-text">[E1] 1--1 (E2)</td>
+			<td class="erd-image"><img src="../../../../images/common/erviz/cardinality-images/1m-1m-id1-ie.png" title="1m-1m-id1-ie.png" alt="1m-1m-id1-ie.png" /></td>
+			<td class="erd-image"><img src="../../../../images/common/erviz/cardinality-images/1m-1m-id1-idef1x.png" title="1m-1m-id1-idef1x.png" alt="1m-1m-id1-idef1x.png" /></td>
+			<td class="remarks"></td>
+		</tr>
+		<tr>
+			<td class="rel-text">[E1] 1--? (E2)</td>
+			<td class="erd-image"><img src="../../../../images/common/erviz/cardinality-images/1m-1o-id1-ie.png" title="1m-1o-id1-ie.png" alt="1m-1o-id1-ie.png" /></td>
+			<td class="erd-image"><img src="../../../../images/common/erviz/cardinality-images/1m-1o-id1-idef1x.png" title="1m-1o-id1-idef1x.png" alt="1m-1o-id1-idef1x.png" /></td>
+			<td class="remarks"></td>
+		</tr>
+		<tr>
+			<td class="rel-text">[E1] ?--1 (E2)</td>
+			<td class="erd-image"><img src="../../../../images/common/erviz/cardinality-images/1o-1m-id1-ie.png" title="1o-1m-id1-ie.png" alt="1o-1m-id1-ie.png" /></td>
+			<td class="erd-image"><img src="../../../../images/common/erviz/cardinality-images/1o-1m-id1-idef1x.png" title="1o-1m-id1-idef1x.png" alt="1o-1m-id1-idef1x.png" /></td>
+			<td class="remarks"></td>
+		</tr>
+		<tr>
+			<td class="rel-text">[E1] ?--? (E2)</td>
+			<td class="erd-image"><img src="../../../../images/common/erviz/cardinality-images/1o-1o-id1-ie.png" title="1o-1o-id1-ie.png" alt="1o-1o-id1-ie.png" /></td>
+			<td class="erd-image"><img src="../../../../images/common/erviz/cardinality-images/1o-1o-id1-idef1x.png" title="1o-1o-id1-idef1x.png" alt="1o-1o-id1-idef1x.png" /></td>
+			<td class="remarks"></td>
+		</tr>
+		<tr>
+			<td class="dependency" rowspan="4">Identifying<br />(independent : the 2nd)</td>
+			<td class="rel-text">(E1) 1--1 [E2]</td>
+			<td class="erd-image"><img src="../../../../images/common/erviz/cardinality-images/1m-1m-id2-ie.png" title="1m-1m-id2-ie.png" alt="1m-1m-id2-ie.png" /></td>
+			<td class="erd-image"><img src="../../../../images/common/erviz/cardinality-images/1m-1m-id2-idef1x.png" title="1m-1m-id2-idef1x.png" alt="1m-1m-id2-idef1x.png" /></td>
+			<td class="remarks"></td>
+		</tr>
+		<tr>
+			<td class="rel-text">(E1) 1--? [E2]</td>
+			<td class="erd-image"><img src="../../../../images/common/erviz/cardinality-images/1m-1o-id2-ie.png" title="1m-1o-id2-ie.png" alt="1m-1o-id2-ie.png" /></td>
+			<td class="erd-image"><img src="../../../../images/common/erviz/cardinality-images/1m-1o-id2-idef1x.png" title="1m-1o-id2-idef1x.png" alt="1m-1o-id2-idef1x.png" /></td>
+			<td class="remarks"></td>
+		</tr>
+		<tr>
+			<td class="rel-text">(E1) ?--1 [E2]</td>
+			<td class="erd-image"><img src="../../../../images/common/erviz/cardinality-images/1o-1m-id2-ie.png" title="1o-1m-id2-ie.png" alt="1o-1m-id2-ie.png" /></td>
+			<td class="erd-image"><img src="../../../../images/common/erviz/cardinality-images/1o-1m-id2-idef1x.png" title="1o-1m-id2-idef1x.png" alt="1o-1m-id2-idef1x.png" /></td>
+			<td class="remarks"></td>
+		</tr>
+		<tr>
+			<td class="rel-text">(E1) ?--? [E2]</td>
+			<td class="erd-image"><img src="../../../../images/common/erviz/cardinality-images/1o-1o-id2-ie.png" title="1o-1o-id2-ie.png" alt="1o-1o-id2-ie.png" /></td>
+			<td class="erd-image"><img src="../../../../images/common/erviz/cardinality-images/1o-1o-id2-idef1x.png" title="1o-1o-id2-idef1x.png" alt="1o-1o-id2-idef1x.png" /></td>
+			<td class="remarks"></td>
+		</tr>
+		<tr>
+			<td class="x-to-x" rowspan="8">One to Many</td>
+			<td class="dependency" rowspan="4">Non-Identifying</td>
+			<td class="rel-text">[E1] 1--+ [E2]</td>
+			<td class="erd-image"><img src="../../../../images/common/erviz/cardinality-images/1m-mm-nid-ie.png" title="1m-mm-nid-ie.png" alt="1m-mm-nid-ie.png" /></td>
+			<td class="erd-image"><img src="../../../../images/common/erviz/cardinality-images/1m-mm-nid-idef1x.png" title="1m-mm-nid-idef1x.png" alt="1m-mm-nid-idef1x.png" /></td>
+			<td class="remarks"></td>
+		</tr>
+		<tr>
+			<td class="rel-text">[E1] 1--* [E2]</td>
+			<td class="erd-image"><img src="../../../../images/common/erviz/cardinality-images/1m-mo-nid-ie.png" title="1m-mo-nid-ie.png" alt="1m-mo-nid-ie.png" /></td>
+			<td class="erd-image"><img src="../../../../images/common/erviz/cardinality-images/1m-mo-nid-idef1x.png" title="1m-mo-nid-idef1x.png" alt="1m-mo-nid-idef1x.png" /></td>
+			<td class="remarks"></td>
+		</tr>
+		<tr>
+			<td class="rel-text">[E1] ?--+ [E2]</td>
+			<td class="erd-image"><img src="../../../../images/common/erviz/cardinality-images/1o-mm-nid-ie.png" title="1o-mm-nid-ie.png" alt="1o-mm-nid-ie.png" /></td>
+			<td class="erd-image"><img src="../../../../images/common/erviz/cardinality-images/1o-mm-nid-idef1x.png" title="1o-mm-nid-idef1x.png" alt="1o-mm-nid-idef1x.png" /></td>
+			<td class="remarks"></td>
+		</tr>
+		<tr>
+			<td class="rel-text">[E1] ?--* [E2]</td>
+			<td class="erd-image"><img src="../../../../images/common/erviz/cardinality-images/1o-mo-nid-ie.png" title="1o-mo-nid-ie.png" alt="1o-mo-nid-ie.png" /></td>
+			<td class="erd-image"><img src="../../../../images/common/erviz/cardinality-images/1o-mo-nid-idef1x.png" title="1o-mo-nid-idef1x.png" alt="1o-mo-nid-idef1x.png" /></td>
+			<td class="remarks"></td>
+		</tr>
+		<tr>
+			<td class="dependency" rowspan="4">Identifying<br />(independent : the 1st)</td>
+			<td class="rel-text">[E1] 1--+ (E2)</td>
+			<td class="erd-image"><img src="../../../../images/common/erviz/cardinality-images/1m-mm-id1-ie.png" title="1m-mm-id1-ie.png" alt="1m-mm-id1-ie.png" /></td>
+			<td class="erd-image"><img src="../../../../images/common/erviz/cardinality-images/1m-mm-id1-idef1x.png" title="1m-mm-id1-idef1x.png" alt="1m-mm-id1-idef1x.png" /></td>
+			<td class="remarks"></td>
+		</tr>
+		<tr>
+			<td class="rel-text">[E1] 1--* (E2)</td>
+			<td class="erd-image"><img src="../../../../images/common/erviz/cardinality-images/1m-mo-id1-ie.png" title="1m-mo-id1-ie.png" alt="1m-mo-id1-ie.png" /></td>
+			<td class="erd-image"><img src="../../../../images/common/erviz/cardinality-images/1m-mo-id1-idef1x.png" title="1m-mo-id1-idef1x.png" alt="1m-mo-id1-idef1x.png" /></td>
+			<td class="remarks"></td>
+		</tr>
+		<tr>
+			<td class="rel-text">[E1] ?--+ (E2)</td>
+			<td class="erd-image"><img src="../../../../images/common/erviz/cardinality-images/1o-mm-id1-ie.png" title="1o-mm-id1-ie.png" alt="1o-mm-id1-ie.png" /></td>
+			<td class="erd-image"><img src="../../../../images/common/erviz/cardinality-images/1o-mm-id1-idef1x.png" title="1o-mm-id1-idef1x.png" alt="1o-mm-id1-idef1x.png" /></td>
+			<td class="remarks"></td>
+		</tr>
+		<tr>
+			<td class="rel-text">[E1] ?--* (E2)</td>
+			<td class="erd-image"><img src="../../../../images/common/erviz/cardinality-images/1o-mo-id1-ie.png" title="1o-mo-id1-ie.png" alt="1o-mo-id1-ie.png" /></td>
+			<td class="erd-image"><img src="../../../../images/common/erviz/cardinality-images/1o-mo-id1-idef1x.png" title="1o-mo-id1-idef1x.png" alt="1o-mo-id1-idef1x.png" /></td>
+			<td class="remarks"></td>
+		</tr>
+		<tr>
+			<td class="x-to-x" rowspan="8">Many to One</td>
+			<td class="dependency" rowspan="4">Non-Identifying</td>
+			<td class="rel-text">[E1] +--1 [E2]</td>
+			<td class="erd-image"><img src="../../../../images/common/erviz/cardinality-images/mm-1m-nid-ie.png" title="mm-1m-nid-ie.png" alt="mm-1m-nid-ie.png" /></td>
+			<td class="erd-image"><img src="../../../../images/common/erviz/cardinality-images/mm-1m-nid-idef1x.png" title="mm-1m-nid-idef1x.png" alt="mm-1m-nid-idef1x.png" /></td>
+			<td class="remarks"></td>
+		</tr>
+		<tr>
+			<td class="rel-text">[E1] +--? [E2]</td>
+			<td class="erd-image"><img src="../../../../images/common/erviz/cardinality-images/mm-1o-nid-ie.png" title="mm-1o-nid-ie.png" alt="mm-1o-nid-ie.png" /></td>
+			<td class="erd-image"><img src="../../../../images/common/erviz/cardinality-images/mm-1o-nid-idef1x.png" title="mm-1o-nid-idef1x.png" alt="mm-1o-nid-idef1x.png" /></td>
+			<td class="remarks"></td>
+		</tr>
+		<tr>
+			<td class="rel-text">[E1] *--1 [E2]</td>
+			<td class="erd-image"><img src="../../../../images/common/erviz/cardinality-images/mo-1m-nid-ie.png" title="mo-1m-nid-ie.png" alt="mo-1m-nid-ie.png" /></td>
+			<td class="erd-image"><img src="../../../../images/common/erviz/cardinality-images/mo-1m-nid-idef1x.png" title="mo-1m-nid-idef1x.png" alt="mo-1m-nid-idef1x.png" /></td>
+			<td class="remarks"></td>
+		</tr>
+		<tr>
+			<td class="rel-text">[E1] *--? [E2]</td>
+			<td class="erd-image"><img src="../../../../images/common/erviz/cardinality-images/mo-1o-nid-ie.png" title="mo-1o-nid-ie.png" alt="mo-1o-nid-ie.png" /></td>
+			<td class="erd-image"><img src="../../../../images/common/erviz/cardinality-images/mo-1o-nid-idef1x.png" title="mo-1o-nid-idef1x.png" alt="mo-1o-nid-idef1x.png" /></td>
+			<td class="remarks"></td>
+		</tr>
+		<tr>
+			<td class="dependency" rowspan="4">Identifying<br />(independent : the 2nd)</td>
+			<td class="rel-text">(E1) +--1 [E2]</td>
+			<td class="erd-image"><img src="../../../../images/common/erviz/cardinality-images/mm-1m-id2-ie.png" title="mm-1m-id2-ie.png" alt="mm-1m-id2-ie.png" /></td>
+			<td class="erd-image"><img src="../../../../images/common/erviz/cardinality-images/mm-1m-id2-idef1x.png" title="mm-1m-id2-idef1x.png" alt="mm-1m-id2-idef1x.png" /></td>
+			<td class="remarks"></td>
+		</tr>
+		<tr>
+			<td class="rel-text">(E1) +--? [E2]</td>
+			<td class="erd-image"><img src="../../../../images/common/erviz/cardinality-images/mm-1o-id2-ie.png" title="mm-1o-id2-ie.png" alt="mm-1o-id2-ie.png" /></td>
+			<td class="erd-image"><img src="../../../../images/common/erviz/cardinality-images/mm-1o-id2-idef1x.png" title="mm-1o-id2-idef1x.png" alt="mm-1o-id2-idef1x.png" /></td>
+			<td class="remarks"></td>
+		</tr>
+		<tr>
+			<td class="rel-text">(E1) *--1 [E2]</td>
+			<td class="erd-image"><img src="../../../../images/common/erviz/cardinality-images/mo-1m-id2-ie.png" title="mo-1m-id2-ie.png" alt="mo-1m-id2-ie.png" /></td>
+			<td class="erd-image"><img src="../../../../images/common/erviz/cardinality-images/mo-1m-id2-idef1x.png" title="mo-1m-id2-idef1x.png" alt="mo-1m-id2-idef1x.png" /></td>
+			<td class="remarks"></td>
+		</tr>
+		<tr>
+			<td class="rel-text">(E1) *--? [E2]</td>
+			<td class="erd-image"><img src="../../../../images/common/erviz/cardinality-images/mo-1o-id2-ie.png" title="mo-1o-id2-ie.png" alt="mo-1o-id2-ie.png" /></td>
+			<td class="erd-image"><img src="../../../../images/common/erviz/cardinality-images/mo-1o-id2-idef1x.png" title="mo-1o-id2-idef1x.png" alt="mo-1o-id2-idef1x.png" /></td>
+			<td class="remarks"></td>
+		</tr>
+		<tr>
+			<td class="x-to-x" rowspan="4">Many to Many</td>
+			<td class="dependency" rowspan="4">Non-Specific</td>
+			<td class="rel-text">[E1] +--+ [E2]</td>
+			<td class="erd-image"><img src="../../../../images/common/erviz/cardinality-images/mm-mm-nsp-ie.png" title="mm-mm-nsp-ie.png" alt="mm-mm-nsp-ie.png" /></td>
+			<td class="erd-image"><img src="../../../../images/common/erviz/cardinality-images/mm-mm-nsp-idef1x.png" title="mm-mm-nsp-idef1x.png" alt="mm-mm-nsp-idef1x.png" /></td>
+			<td class="remarks"></td>
+		</tr>
+		<tr>
+			<td class="rel-text">[E1] +--* [E2]</td>
+			<td class="erd-image"><img src="../../../../images/common/erviz/cardinality-images/mm-mo-nsp-ie.png" title="mm-mo-nsp-ie.png" alt="mm-mo-nsp-ie.png" /></td>
+			<td class="erd-image"><img src="../../../../images/common/erviz/cardinality-images/mm-mo-nsp-idef1x.png" title="mm-mo-nsp-idef1x.png" alt="mm-mo-nsp-idef1x.png" /></td>
+			<td class="remarks"></td>
+		</tr>
+		<tr>
+			<td class="rel-text">[E1] *--+ [E2]</td>
+			<td class="erd-image"><img src="../../../../images/common/erviz/cardinality-images/mo-mm-nsp-ie.png" title="mo-mm-nsp-ie.png" alt="mo-mm-nsp-ie.png" /></td>
+			<td class="erd-image"><img src="../../../../images/common/erviz/cardinality-images/mo-mm-nsp-idef1x.png" title="mo-mm-nsp-idef1x.png" alt="mo-mm-nsp-idef1x.png" /></td>
+			<td class="remarks"></td>
+		</tr>
+		<tr>
+			<td class="rel-text">[E1] *--* [E2]</td>
+			<td class="erd-image"><img src="../../../../images/common/erviz/cardinality-images/mo-mo-nsp-ie.png" title="mo-mo-nsp-ie.png" alt="mo-mo-nsp-ie.png" /></td>
+			<td class="erd-image"><img src="../../../../images/common/erviz/cardinality-images/mo-mo-nsp-idef1x.png" title="mo-mo-nsp-idef1x.png" alt="mo-mo-nsp-idef1x.png" /></td>
+			<td class="remarks"></td>
+		</tr>
+		<tr>
+			<td class="x-to-x" rowspan="3">Unknown</td>
+			<td class="dependency" rowspan="1">Non-Specific</td>
+			<td class="rel-text">[E1] ---- [E2]</td>
+			<td class="erd-image"><img src="../../../../images/common/erviz/cardinality-images/uu-uu-nid-ie.png" title="uu-uu-nid-ie.png" alt="uu-uu-nid-ie.png" /></td>
+			<td class="erd-image"><img src="../../../../images/common/erviz/cardinality-images/uu-uu-nid-idef1x.png" title="uu-uu-nid-idef1x.png" alt="uu-uu-nid-idef1x.png" /></td>
+			<td class="remarks"></td>
+		</tr>
+		<tr>
+			<td class="dependency" rowspan="1">Identifying<br />(independent : the 1st)</td>
+			<td class="rel-text">[E1] ---- (E2)</td>
+			<td class="erd-image"><img src="../../../../images/common/erviz/cardinality-images/uu-uu-id1-ie.png" title="uu-uu-id1-ie.png" alt="uu-uu-id1-ie.png" /></td>
+			<td class="erd-image"><img src="../../../../images/common/erviz/cardinality-images/uu-uu-id1-idef1x.png" title="uu-uu-id1-idef1x.png" alt="uu-uu-id1-idef1x.png" /></td>
+			<td class="remarks"></td>
+		</tr>
+		<tr>
+			<td class="dependency" rowspan="1">Identifying<br />(independent : the 2nd)</td>
+			<td class="rel-text">(E1) ---- [E2]</td>
+			<td class="erd-image"><img src="../../../../images/common/erviz/cardinality-images/uu-uu-id2-ie.png" title="uu-uu-id2-ie.png" alt="uu-uu-id2-ie.png" /></td>
+			<td class="erd-image"><img src="../../../../images/common/erviz/cardinality-images/uu-uu-id2-idef1x.png" title="uu-uu-id2-idef1x.png" alt="uu-uu-id2-idef1x.png" /></td>
+			<td class="remarks"></td>
+		</tr>
+	</table>
+	<hr />
+	
+	<div id="footer-links">
+		Back to 
+				[<a href="../about.html">What is Erviz?</a>] 
+		[<a href="../references.html">Referenses</a>]
+	</div>
+	
+</div> <!-- container -->
+</body>
+</html>

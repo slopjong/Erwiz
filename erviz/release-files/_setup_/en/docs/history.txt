@@ -1,0 +1,33 @@
+History
+
+--------------------------------------------------------------------------------
+version 1.0.6 (2010/07/27)
+	* XML property files have been introduced to define user messages.
+	* Japanese messages have been supported.
+	* Utility scripts have been modified. (locale setting, error processing)
+--------------------------------------------------------------------------------
+version 1.0.5 (2010/06/30)
+	* Setup scripts have been added.
+	* HTML documents have been added.
+	* Utility scripts have been modified.
+	* Message function has been modified.
+--------------------------------------------------------------------------------
+version 1.0.4 (2010/06/22)
+	* The omission of entity definition has been supported.
+	* Documents and scripts have been modified.
+--------------------------------------------------------------------------------
+version 1.0.3 (2010/06/17)
+	* Automatic judgment for dependencies of entities has been supported.
+	* IE-Strict notation has supported.
+	* For relationships whose cardinality is unknown, solid lines has been drawn.
+	* The specification for title size has supported.
+--------------------------------------------------------------------------------
+version 1.0.2 (2010/06/12)
+	* The output algorithm for relationships has been modified.
+--------------------------------------------------------------------------------
+version 1.0.1 (2010/05/27)
+	* Linking to external files in SVG has supported. 
+--------------------------------------------------------------------------------
+version 1.0.0 (2010/05/23)
+	* The first release.
+--------------------------------------------------------------------------------

@@ -1,0 +1,218 @@
+@charset "utf-8";
+
+/* 
+ * table configurations
+ */
+
+
+/* erviz-samples **************************************************************/
+
+table#erviz-samples {
+	margin: 0;
+}
+
+table#erviz-samples td.name {
+	width: 120px;
+}
+
+table#erviz-samples td.text {
+	width: 60px;
+	text-align: center;
+}
+
+table#erviz-samples td.notation {
+	width: 70px;
+	text-align: center;
+}
+
+table#erviz-samples td.description {
+	width: 312px;
+}
+
+
+/* erviz-archives *************************************************************/
+
+table#erviz-archives {
+	margin: 0;
+}
+
+table#erviz-archives td.version {
+	width: 90px;
+	text-align: center;
+}
+
+table#erviz-archives td.date {
+	width: 110px;
+	text-align: center;
+}
+
+table#erviz-archives td.type {
+	width: 110px;
+	text-align: center;
+}
+
+table#erviz-archives td.file {
+	width: 160px;
+	text-align: center;
+}
+
+table#erviz-archives td.size {
+	width: 80px;
+	text-align: right;
+	padding-right: 20px;
+}
+
+
+/* cardinality-list ***********************************************************/
+
+table#cardinality-list {
+	margin: 10px auto;
+}
+
+table#cardinality-list td.x-to-x {
+	width: 110px;
+	text-align: center;
+}
+
+table#cardinality-list td.dependency {
+	width: 160px;
+	text-align: center;
+}
+
+table#cardinality-list td.rel-text {
+	width: 110px;
+	text-align: center;
+}
+
+table#cardinality-list td.erd-image {
+	width: 200px;
+	text-align: center;
+}
+
+table#cardinality-list td.erd-image img {
+	max-width: 200px; /*画像サイズ縮小*/
+}
+
+table#cardinality-list td.remarks {
+	width: 200px;
+}
+
+
+/* cardinality-symbols ********************************************************/
+
+table#cardinality-symbols {
+	margin: 10px auto;
+}
+
+table#cardinality-symbols td.symbol {
+	width: 100px;
+	text-align: center;
+}
+
+table#cardinality-symbols td.meaning {
+	width: 150px;
+	text-align: center;
+}
+
+table#cardinality-symbols td.cardinality {
+	width: 100px;
+	text-align: center;
+}
+
+table#cardinality-symbols td.optionality {
+	width: 100px;
+	text-align: center;
+}
+
+
+/* parsing-rel-dependency *****************************************************/
+
+table#parsing-dependency {
+	margin: 10px auto;
+}
+
+table#parsing-dependency td.x-to-x {
+	width: 120px;
+	text-align: center;
+}
+
+table#parsing-dependency td.rel-text {
+	width: 100px;
+	text-align: center;
+}
+
+table#parsing-dependency td.dependency {
+	width: 100px;
+	text-align: center;
+}
+
+table#parsing-dependency td.parent-or-child {
+	width: 100px;
+	text-align: center;
+}
+
+table#parsing-dependency td.remarks {
+	width: 300px;
+}
+
+
+/* erviz-options **************************************************************/
+
+table#erviz-options {
+	margin: 10px auto;
+}
+
+table#erviz-options td.target {
+	width: 100px;
+}
+
+table#erviz-options td.option-name {
+	width: 100px;
+}
+
+table#erviz-options td.description {
+	width: 600px;
+}
+
+
+/* brackets *******************************************************************/
+
+table#brackets {
+	margin: 5px 0;
+}
+
+table#brackets td.name {
+	width: 100px;
+	text-align: center;
+}
+
+table#brackets td.bracket {
+	width: 50px;
+	text-align: center;
+}
+
+
+/* er-styles ******************************************************************/
+
+table#er-styles {
+	margin: 5px 0;
+}
+
+table#er-styles td.notation {
+	width: 100px;
+}
+
+table#er-styles td.entity {
+	width: 110px;
+	text-align: center;
+}
+
+table#er-styles td.relationship {
+	width: 110px;
+	text-align: center;
+}
+
+table#er-styles td.description {
+	width: 320px;
+}
+

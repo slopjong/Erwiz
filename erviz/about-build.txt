@@ -1,0 +1,16 @@
+To build jar file and create release archive files, use ant build script ("build.xml") with default target.
+
+> ant -f build.xml
+
+Then archive files will be generated in "release_archives" directory.
+
+Build.xml refers "../erviz-core/src/jp/gr/java_conf/simply/erviz/common/resources/app_info.properties" and
+use the written application name and version number to decise a jar name and archive file names.
+If you release new version, update the "app_info.properties" then build this application.
+
+The "release_files/_setup_/common/bin" directory contains one or more jar files.
+On build time, the jar files will be generated in this directory, 
+and they will be copied to archive files with script files.
+
+The "release_files/_setup_/**/docs" contains document files which will be released.
+On build time, they will be copied to archive files. 

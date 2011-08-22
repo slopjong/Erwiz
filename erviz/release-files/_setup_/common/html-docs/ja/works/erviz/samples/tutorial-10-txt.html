@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="content-script-type" content="text/javascript" />
+<meta http-equiv="content-style-type" content="text/css" />
+<meta http-equiv="imagetoolbar" content="no" />
+<link href="../../../../css/default.css" rel="stylesheet" type="text/css" />
+<link href="../../../../css/sample-pages.css" rel="stylesheet" type="text/css" />
+<link href="../../../../css/menu.css" rel="stylesheet" type="text/css" />
+<meta name="keywords" content="ERD,Entity Relationship Diagram,ER図,実体関連図,Graphviz,Erviz" />
+<meta name="description" content="Ervizのテキスト (チュートリアル 10)" />
+<title>Ervizのテキスト (チュートリアル 10)</title>
+</head>
+<body>
+
+<div id="container">
+	
+	<div id="header-links">
+		戻る： 
+				[<a href="../about.html">Ervizとは?</a>] 
+		[<a href="../samples.html">サンプルとチュートリアル</a>]
+	</div>
+	
+	<hr />
+	<div id="sample-links">
+		[<a href="./tutorial-09-txt.html">前の図</a>]
+		<span>
+		[
+		テキスト
+		 | <a href="./tutorial-10-ie-png.html">IE</a>
+		 | <a href="./tutorial-10-idef1x-png.html">IDEF1X</a>
+		]
+		</span>
+		[次の図]
+	</div>
+	
+	<div id="content">
+		<h1>Ervizのテキスト (チュートリアル 10)</h1>
+		
+		<pre><code><span class="comment">#</span>
+<span class="comment"># このファイルはErviz 1.0.4のサンプルテキストです。(Tutorial 10)</span>
+<span class="comment">#</span>
+
+<span class="comment"># </span>
+<span class="comment"># オプション</span>
+<span class="comment"># </span>
+<span class="comment"># このファイルでは、オプションをいくつか紹介します。</span>
+<span class="comment"># </span>
+<span class="comment"># Ervizサポートするオプションは、以下のようなグループに分類されます。</span>
+<span class="comment">#   * 全体オプション (ER図全体に適用される)</span>
+<span class="comment">#   * エンティティオプション (エンティティに適用される)</span>
+<span class="comment">#   * エンティティ属性オプション (エンティティ属性に適用される)</span>
+<span class="comment">#   * リレーションシップオプション (リレーションシップ属性に適用される)</span>
+<span class="comment"># </span>
+<span class="comment"># オプションは、波括弧で囲まれ、通常はオプション指定の対象となる要素の後に記述されます。</span>
+<span class="comment"># オプション指定でのオプション名とオプション値は「:」で区切られます。</span>
+<span class="comment"># 波括弧のペアの中に複数のオプションを指定する場合は、「;」で区切られます。</span>
+<span class="comment"># オプション名では、大文字・小文字は区別されません。</span>
+<span class="comment"># </span>
+<span class="comment"># 現在のバージョンでは、Ervizは以下オプションをサポートします。</span>
+<span class="comment">#   * title</span>
+<span class="comment">#       全体オプションです。ER図のタイトルを指定します。</span>
+<span class="comment">#   * title-size</span>
+<span class="comment">#       全体オプションです。タイトルのサイズを指定します。(デフォルト:12)</span>
+<span class="comment">#   * color</span>
+<span class="comment">#       エンティティオプションです。エンティティの色を指定します。</span>
+<span class="comment">#   * mark</span>
+<span class="comment">#       エンティティオプションまたはエンティティ属性オプションです。任意の語句を指定します。</span>
+<span class="comment">#   * N1</span>
+<span class="comment">#       リレーションシップオプションです。1番目のエンティティに対する任意のカーディナリティ文字列を指定します。</span>
+<span class="comment">#   * N2</span>
+<span class="comment">#       リレーションシップオプションです。2番目のエンティティに対する任意のカーディナリティ文字列を指定します。</span>
+<span class="comment">#   </span>
+<span class="comment">#   注意：上記の一覧では、一部のオプションは省略されています。</span>
+<span class="comment"># </span>
+
+{title: &quot;オプション&quot;; title-size: 14}
+
+[商品]          {mark: &quot;&lt;変更&gt;&quot;; color: orange}
+*商品ID
+ 商品名
+ 標準価格
+ 商品分類ID*    {mark: &quot;&lt;新規&gt;&quot;}
+
+[商品分類]      {mark: &quot;&lt;新規&gt;&quot;; color: red}
+*商品分類ID
+ 商品分類名
+ 上位分類ID*
+
+[仕入先]        {color: blue}
+*仕入先ID
+ 仕入先名
+
+[商品仕入先]    {color: green}
+*商品ID*
+*仕入先ID*
+*枝番
+ 適用開始日
+ 適用終了日
+
+[電話番号]
+
+[商品] *--1 [商品分類]
+
+[商品分類] *--? [商品分類]
+
+[商品] 1--* (商品仕入先)
+
+[仕入先] 1--* (商品仕入先)
+
+[仕入先] ?--+ [電話番号] {N1: &quot;0-1&quot;; N2: &quot;1-3&quot;}
+
+</code></pre>
+	</div>
+	<hr />
+	
+	<div id="footer-links">
+		戻る： 
+				[<a href="../about.html">Ervizとは?</a>] 
+		[<a href="../samples.html">サンプルとチュートリアル</a>]
+	</div>
+	
+</div>
+
+</body>
+</html>

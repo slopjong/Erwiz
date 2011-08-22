@@ -1,0 +1,6 @@
+bgcolor = white
+fontcolor = black
+labelloc = t
+labeljust = l
+ranksep = 1.0
+nodesep = 1.0

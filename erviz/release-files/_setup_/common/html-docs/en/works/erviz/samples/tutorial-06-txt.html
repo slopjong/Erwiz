@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="content-script-type" content="text/javascript" />
+<meta http-equiv="content-style-type" content="text/css" />
+<meta http-equiv="imagetoolbar" content="no" />
+<link href="../../../../css/default.css" rel="stylesheet" type="text/css" />
+<link href="../../../../css/sample-pages.css" rel="stylesheet" type="text/css" />
+<link href="../../../../css/menu.css" rel="stylesheet" type="text/css" />
+<meta name="keywords" content="ERD,Entity Relationship Diagram,Graphviz,Erviz" />
+<meta name="description" content="A text data for Erviz (Tutorial 06)" />
+<title>A text data for Erviz (Tutorial 06)</title>
+</head>
+<body>
+
+<div id="container">
+	
+	<div id="header-links">
+		Back to 
+				[<a href="../about.html">What is Erviz?</a>] 
+		[<a href="../samples.html">Samples and Tutorials</a>]
+	</div>
+	
+	<hr />
+	<div id="sample-links">
+		[<a href="./tutorial-05-txt.html">Preveous Diagram</a>]
+		<span>
+		[
+		Text
+		 | <a href="./tutorial-06-ie-png.html">IE</a>
+		 | <a href="./tutorial-06-idef1x-png.html">IDEF1X</a>
+		]
+		</span>
+		[<a href="./tutorial-07-txt.html">Next Diagram</a>]
+	</div>
+	
+	<div id="content">
+		<h1>A text data for Erviz (Tutorial 06)</h1>
+		
+		<pre><code><span class="comment">#</span>
+<span class="comment"># This is a sample text file for Erviz 1.0.4. (Tutorial 06)</span>
+<span class="comment">#</span>
+
+<span class="comment"># </span>
+<span class="comment"># Verb Phrases</span>
+<span class="comment"># </span>
+<span class="comment"># In relationship lines, the verb phrases can be specified.</span>
+<span class="comment"># The verb phrases are enclosed by angle brackets, and are positioned after the second entity name.</span>
+<span class="comment"># </span>
+<span class="comment"># The verb phrases can have directions as follows:</span>
+<span class="comment">#   * If &quot;-&quot; is inserted between the verb phrase and the right angle bracket like &quot;&lt;verb-&gt;&quot;,</span>
+<span class="comment">#     the direction is &quot;from the FIRST ENTITY to the SECOND ENTITY&quot;.</span>
+<span class="comment">#   * If &quot;-&quot; is inserted between the left angle bracket and the verb phrase like &quot;&lt;-verb&gt;&quot;,</span>
+<span class="comment">#     the direction is &quot;from the SECOND ENTITY to the FIRST ENTITY&quot;.</span>
+<span class="comment"># </span>
+
+{title: &quot;Verb Phrases&quot;}
+
+[Customer] 1--* [Order] &lt;places&gt;
+
+[Order] 1--+ [Order Details] &lt;contains-&gt;
+
+</code></pre>
+	</div>
+	<hr />
+	
+	<div id="footer-links">
+		Back to 
+				[<a href="../about.html">What is Erviz?</a>] 
+		[<a href="../samples.html">Samples and Tutorials</a>]
+	</div>
+	
+</div>
+
+</body>
+</html>

@@ -1,0 +1,4 @@
+fontsize = 12
+fontcolor = black
+labeldistance = 2.0
+dir = both

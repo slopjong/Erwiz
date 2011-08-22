@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+
+<comment>See: jp.gr.java_conf.simply.erviz.cui.Message</comment>
+
+<!-- Help Message -->
+<entry key="HELP">
+<![CDATA[
+Usage: erviz [-h] [-d] [-i <input file>] [-o <output file>] [-n <notation>] [-f <font>] [-c <color>]
+  
+  '*' indicates default.
+  -h                Print help and exit.
+  -d                Enable debug mode.
+  -i <input file>   Set input file. If not specified, the standard input is used.
+  -o <output file>  Set output file. If not specified, the standard output is used.
+  -n <notation>     Set ERD notation. (*ie/ie-strict/idef1x)
+  -f <font>         Set font name.
+  -c <color>        Set default entity color. (*white/red/blue/green/yellow/orange)
+]]>
+</entry>
+
+<!-- Error Messages -->
+<entry key="ERR_INVALID_OPTION">invalid command line option(s) found.</entry>
+<entry key="ERR_INPUT_FILE_NOT_FOUND">input file is not found. [%s]</entry>
+<entry key="ERR_INPUT_EXCEPTION">input error occured. [%s]</entry>
+<entry key="ERR_OUTPUT_FILE_NOT_FOUND">output file is not found. [%s]</entry>
+<entry key="ERR_OUTPUT_EXCEPTION">output error occured. [%s]</entry>
+<entry key="ERR_TEXT_PARSING">text parsing error occured.</entry>
+<entry key="ERR_DOT_GENERATION">dot generation error occured.</entry>
+<entry key="ERR_UNKNOWN">error occured.</entry>
+
+<!-- Debug Messages -->
+<entry key="DBG_DEBUG_MODE_ON">debug mode is enabled.</entry>
+<entry key="DBG_READING_TEXT_COMPLETED">reading text completed.</entry>
+<entry key="DBG_PARSING_TEXT_COMPLETED">parsing text completed.</entry>
+<entry key="DBG_GENERATING_DOT_COMPLETED">generating dot completed.</entry>
+<entry key="DBG_WRITING_DOT_COMPLETED">writing dot completed.</entry>
+
+<!-- Detail Messages for Cmmand Line Options -->
+<entry key="CLO_UNKNOWN_ERD_NOTATION">unknown ERD notation: %s</entry>
+<entry key="CLO_UNKNOWN_COLOR_NAME">unknown color name: %s</entry>
+<entry key="CLO_UNKNOWN_OPTION">unknown option: %s</entry>
+<entry key="CLO_INVALID_PARAM">invalid parameter: %s</entry>
+
+<!-- Misc -->
+<entry key="MISC_STDIN">the standard input</entry>
+<entry key="MISC_STDOUT">the standard output</entry>
+
+</properties>
