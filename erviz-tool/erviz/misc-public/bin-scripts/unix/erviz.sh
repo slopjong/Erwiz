@@ -2,16 +2,34 @@
 
 #  A wrapper for erviz-cui-*.*.*.jar
 
-#  Tested on Ubuntu 8.04
+MESSAGES="`dirname $0`/messages.sh"
+LANG="`dirname $0`/lang.sh"
 
-. "`dirname $0`/messages.sh"
-. "`dirname $0`/lang.sh"
+if [ -f $MESSAGES ]; then
+	. $MESSAGES
+else
+	. "/opt/erviz-*.*.*/bin/messages.sh"
+fi
+
+if [ -f $LANG ]; then
+	. $LANG
+else
+	. "/opt/erviz-*/bin/lang.sh"
+fi
 
 CUI_JAR_NAME_PATTERN="erviz-cui-*.*.*.jar"
 CUI_JAR_PATH_PATTERN="`dirname $0`/${CUI_JAR_NAME_PATTERN}";
 
+if [ ! -f $CUI_JAR_PATH_PATTERN ]; then
+	CUI_JAR_PATH_PATTERN="/opt/erviz-*.*.*/bin/${CUI_JAR_NAME_PATTERN}";
+fi
+
 CORE_JAR_NAME_PATTERN="erviz-core-*.*.*.jar"
 CORE_JAR_PATH_PATTERN="`dirname $0`/${CORE_JAR_NAME_PATTERN}";
+
+if [ ! -f $CORE_JAR_PATH_PATTERN ]; then
+	CORE_JAR_PATH_PATTERN="/opt/erviz-*.*.*/bin/${CORE_JAR_NAME_PATTERN}";
+fi
 
 MAIN_CLASS=jp.gr.java_conf.simply.erviz.cui.Main
 

@@ -6,10 +6,18 @@
 #-- initialize -----------------------------------------------------------------
 
 # load messages
-. "`dirname $0`/messages.sh"
+MESSAGES="`dirname $0`/messages.sh"
+if [ -f $MESSAGES ]; then
+	. $MESSAGES
+else
+	. "/opt/erviz-*.*.*/bin/messages.sh"
+fi
 
 # commands
 ERVIZ_CMD="`dirname $0`/erviz.sh"
+if [ ! -f $ERVIZ_CMD ]; then
+	ERVIZ_CMD="/opt/erviz-*.*.*/bin/erviz.sh"
+fi
 DOT_CMD=dot
 
 # ERD notation (ie, idef1x)
