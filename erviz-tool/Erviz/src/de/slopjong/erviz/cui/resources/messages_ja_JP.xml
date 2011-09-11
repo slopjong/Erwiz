@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+
+<comment>参照: de.slopjong.erviz.cui.Message</comment>
+
+<!-- Help Message -->
+<entry key="HELP">
+<![CDATA[
+使用法: erviz [-h] [-d] [-i <入力ファイル>] [-o <出力ファイル>] [-n <表記法>] [-f <フォント>] [-c <色>]
+  
+  '*'はデフォルト
+  -h                 ヘルプを表示して終了します。
+  -d                 デバッグモードを有効にします。
+  -i <入力ファイル>  入力ファイルを指定します。指定なしの場合は、標準入力が使用されます。
+  -o <出力ファイル>  出力ファイルを指定します。指定なしの場合は、標準出力が使用されます。
+  -n <表記法>        ER図の表記法を指定します。(*ie/ie-strict/idef1x)
+  -f <フォント>      フォント名を指定します。
+  -c <色>            デフォルトのエンティティ色を指定します。(*white/red/blue/green/yellow/orange)
+]]>
+</entry>
+
+<!-- Error Messages -->
+<entry key="ERR_INVALID_OPTION">コマンドラインオプションが不正です。</entry>
+<entry key="ERR_INPUT_FILE_NOT_FOUND">入力ファイルが見つかりません。[%s]</entry>
+<entry key="ERR_INPUT_EXCEPTION">入力エラーが発生しました。[%s]</entry>
+<entry key="ERR_OUTPUT_FILE_NOT_FOUND">出力ファイルが見つかりません。[%s]</entry>
+<entry key="ERR_OUTPUT_EXCEPTION">出力エラーが発生しました。[%s]</entry>
+<entry key="ERR_TEXT_PARSING">テキスト解析エラーが発生しました。</entry>
+<entry key="ERR_DOT_GENERATION">DOT生成エラーが発生しました。</entry>
+<entry key="ERR_UNKNOWN">エラーが発生しました。</entry>
+
+<!-- Debug Messages -->
+<entry key="DBG_DEBUG_MODE_ON">デバッグモードが有効になりました。</entry>
+<entry key="DBG_READING_TEXT_COMPLETED">テキスト読み込みを完了しました。</entry>
+<entry key="DBG_PARSING_TEXT_COMPLETED">テキスト解析を完了しました。</entry>
+<entry key="DBG_GENERATING_DOT_COMPLETED">DOT生成を完了しました。</entry>
+<entry key="DBG_WRITING_DOT_COMPLETED">DOT書き込みを完了しました。</entry>
+
+<!-- Detail Messages for Cmmand Line Options -->
+<entry key="CLO_UNKNOWN_ERD_NOTATION">不明なERD表記法: %s</entry>
+<entry key="CLO_UNKNOWN_COLOR_NAME">不明な色名: %s</entry>
+<entry key="CLO_UNKNOWN_OPTION">不明なオプション: %s</entry>
+<entry key="CLO_INVALID_PARAM">不正なパラメータ: %s</entry>
+
+<!-- Misc -->
+<entry key="MISC_STDIN">標準入力</entry>
+<entry key="MISC_STDOUT">標準出力</entry>
+
+</properties>

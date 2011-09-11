@@ -1,0 +1,92 @@
+# Using Erviz 1.0.6
+{title: "Syn2Stock ERD V3"; title-size: 20}
+
+# Entities
+
+[Item] {color:red}
+ *Item ID
+  Type
+  SimpleItem
+  Bar Code
+  Name
+  Amount
+  Owner
+  Comment
+  Attachments
+  Sources
+  Source ID*
+  Location ID*
+  Lending ID*
+
+[Source]
+ *Source ID
+  Price
+  Homepage
+  Manufacturer
+
+[Location]
+ *Location ID
+  GPS Coordinates
+  Name
+  Room
+  Locker
+
+[Lending]
+ *Lending ID
+  Borrowed by
+  Borrowed on
+  Returned on
+  Reminder ID*
+
+[Reminder]
+ *Reminder ID
+  Start Date
+  Repeat Interval
+  End Date
+  Active
+  Action
+  Email
+  Phone
+  Message
+  Item ID*
+  Lending ID*
+
+[Event]
+  *Event ID
+  Event Type
+  Date
+  User
+  Item ID*
+
+[Attachment]
+ *Attachment ID
+  File
+  External URL
+  Private
+
+[Electronic Part] {color:orange}
+ *Electronic Part ID
+  Value
+  Item ID*
+
+[Book] {color:orange}
+ *Book ID
+  Subtitle
+  Author
+  Publisher
+  Paperback
+  Language
+  Review
+  Summary
+  About the Author
+  Item ID*
+
+# Relationships
+[Item] *--* [Source]
+[Item] 1--1 [Location]
+[Item] 1--* [Lending]
+[Item] *--* [Attachment]
+[Reminder] ---- [Item]
+[Event] *--1 [Item] <contains->
+[Electronic Part] ---- [Item] <is a->
+[Book] ---- [Item] <is a->

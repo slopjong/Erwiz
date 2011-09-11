@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE project [<!ENTITY common SYSTEM "common.xml">]>
-
-<project default="javadoc" basedir=".">
-	<target name="javadoc">
-		<ant antfile="./build.xml" target="javadoc" />
-	</target>
-</project>
