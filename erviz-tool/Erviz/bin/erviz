@@ -1,0 +1,57 @@
+#!/bin/sh
+
+# For localization see:
+#
+#   * http://blog.fpmurphy.com/2010/07/localizing-korn-shell-scripts.html
+
+
+ERVIZ_JAR_NAME_PATTERN="erviz-*.*.*.jar"
+ERVIZ_JAR_PATH_PATTERN="/usr/share/java/erviz/jar/${ERVIZ_JAR_NAME_PATTERN}"
+
+MAIN_CLASS="de.slopjong.erviz.cui.Main"
+
+#  searches the last modified jar file
+for ERVIZ_JAR_NAME in `ls -t ${ERVIZ_JAR_PATH_PATTERN} 2> /dev/null`
+do
+	break
+done
+
+if [ "${ERVIZ_JAR_NAME}" = "" ]
+then
+	echo "The erviz library could not be found: ${ERVIZ_JAR_NAME_PATTERN}" 1>&2
+	exit 1
+fi
+
+#  executes the jar file
+USER_PROPERTIES="-Duser.language=en -Duser.country=US"
+
+# if no arguments are passed, try to read from the standard input
+if [ $# -eq 0 ]
+then
+	LANG=C #use the default locale which hopefully is English
+	set -a
+
+	if [ "$( tty )" == 'not a tty' ]
+	then
+    		STDIN_DATA_PRESENT=1
+	else
+    		STDIN_DATA_PRESENT=0
+	fi
+
+	if [ ${STDIN_DATA_PRESENT} -eq 1 ]
+	then
+		java ${USER_PROPERTIES} -cp "${ERVIZ_JAR_NAME}" ${MAIN_CLASS}
+	else
+		java ${USER_PROPERTIES} -cp "${ERVIZ_JAR_NAME}" ${MAIN_CLASS} "-h"
+	fi
+fi
+
+
+java ${USER_PROPERTIES} -cp "${ERVIZ_JAR_NAME}" ${MAIN_CLASS} "$@"
+
+if [ $? -ge 1 ]
+then
+	exit 1
+fi
+
+exit 0
