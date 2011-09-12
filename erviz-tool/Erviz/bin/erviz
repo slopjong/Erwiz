@@ -1,0 +1,40 @@
+#!/bin/sh
+
+usage ()
+{
+	echo $errmsg
+	echo "Usage: erviz <input.txt> <output.(png|jpg|jpeg|pdf|svg)>"
+	echo ""
+	echo "Erviz converts the text-based entity-relation model <input.txt> to a raster image (png, jpeg) or to a vector image (pdf, svg)."
+}
+
+if [ $# -lt 2 ];
+then
+	usage
+	exit
+fi
+
+if [ ! -f $1 ]
+then
+    errmsg="File not found: "${1}
+    usage
+    exit
+fi
+
+COMMAND_PATH=${PWD}/`dirname $0`
+
+OUT_FILE="$2"
+DESTINATION_PATH=`dirname ${OUT_FILE}`
+OUT_TYPE="${OUT_FILE##*.}"
+	
+mkdir -p ${DESTINATION_PATH}
+
+TEMP_FILE_NAME="erviz${RANDOM}"
+TEMP_DOT_FILE="/tmp/${TEMP_FILE_NAME}.dot"
+TEMP_OUTPUT_FILE="/tmp/${TEMP_FILE_NAME}.${OUT_TYPE}"
+
+`${COMMAND_PATH}/erviz_txt2dot -i $1 -o ${TEMP_DOT_FILE}`
+`export OUT_TYPE=${OUT_TYPE}; ${COMMAND_PATH}/erviz_dot2vecras ${TEMP_DOT_FILE}`
+cp ${TEMP_OUTPUT_FILE} ${OUT_FILE}
+cd /tmp
+rm ${TEMP_FILE_NAME}.dot ${TEMP_FILE_NAME}.${OUT_TYPE}
