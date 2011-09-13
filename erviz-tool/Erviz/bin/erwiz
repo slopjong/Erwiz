@@ -1,0 +1,55 @@
+#!/bin/sh
+
+usage ()
+{
+	echo " "
+	#echo "Usage: erwiz [-h] [-d] [-n <notation>] [-f <font>] [-c <color>]  <input file>  <output file>"
+	echo "Usage: erwiz [OPTIONS] <input file> <output file>"
+	echo " "
+	echo "Erwiz converts the input file (of type txt) to a raster image (png, jpeg) or a vector image (pdf, svg)."  
+	echo " "
+	echo "Otions:"
+	echo " "
+	echo "   -h                Print the usage."
+	#echo "   -d                Enable debug mode."
+	echo "   -n <notation>     Use <notation> as the ERD notation. Available notations:"
+	echo "                        ie (default), ie-strict, idef1x"
+	echo "   -f <font>         Use <font> for the rendering."
+	echo "   -c <color>        Use <color> as the default entity color. Available colors:"
+	echo "                        white (default), red, blue, green, yellow, orange"
+}
+
+if [ $# -lt 2 ];
+then
+	usage
+	exit
+fi
+
+
+IN_FILE=${@:$(($#-1)):1}
+
+if [ ! -f $IN_FILE ]
+then
+	echo " "
+    echo "File not found: $IN_FILE"
+    usage
+    exit
+fi
+
+COMMAND_PATH=${PWD}/`dirname $0` 
+OUT_FILE=${@:$(($#)):1}
+OTHER_ARGUMENTS=${@:1:$(($#-2))}
+DESTINATION_PATH=`dirname ${OUT_FILE}`
+OUT_TYPE="${OUT_FILE##*.}"
+	
+mkdir -p ${DESTINATION_PATH}
+
+TEMP_FILE_NAME="erwiz${RANDOM}"
+TEMP_DOT_FILE="/tmp/${TEMP_FILE_NAME}.dot"
+TEMP_OUTPUT_FILE="/tmp/${TEMP_FILE_NAME}.${OUT_TYPE}"
+
+`${COMMAND_PATH}/erwiz_txt2dot -i ${IN_FILE} -o ${TEMP_DOT_FILE} ${OTHER_ARGUMENTS}`
+`export OUT_TYPE=${OUT_TYPE}; ${COMMAND_PATH}/erwiz_dot2vecras ${TEMP_DOT_FILE}`
+cp ${TEMP_OUTPUT_FILE} ${OUT_FILE}
+cd /tmp
+rm ${TEMP_FILE_NAME}.dot ${TEMP_FILE_NAME}.${OUT_TYPE}

@@ -5,20 +5,20 @@
 #   * http://blog.fpmurphy.com/2010/07/localizing-korn-shell-scripts.html
 
 
-ERVIZ_JAR_NAME_PATTERN="erviz-*.*.*.jar"
-ERVIZ_JAR_PATH_PATTERN="/usr/share/java/erviz/jar/${ERVIZ_JAR_NAME_PATTERN}"
+ERWIZ_JAR_NAME_PATTERN="ERWIZ-*.*.*.jar"
+ERWIZ_JAR_PATH_PATTERN="/usr/share/java/erwiz/jar/${ERWIZ_JAR_NAME_PATTERN}"
 
-MAIN_CLASS="de.slopjong.erviz.cui.Main"
+MAIN_CLASS="de.slopjong.erwiz.cui.Main"
 
 #  searches the last modified jar file
-for ERVIZ_JAR_NAME in `ls -t ${ERVIZ_JAR_PATH_PATTERN} 2> /dev/null`
+for ERWIZ_JAR_NAME in `ls -t ${ERWIZ_JAR_PATH_PATTERN} 2> /dev/null`
 do
 	break
 done
 
-if [ "${ERVIZ_JAR_NAME}" = "" ]
+if [ "${ERWIZ_JAR_NAME}" = "" ]
 then
-	echo "The erviz library could not be found: ${ERVIZ_JAR_NAME_PATTERN}" 1>&2
+	echo "The ERWIZ library could not be found: ${ERWIZ_JAR_NAME_PATTERN}" 1>&2
 	exit 1
 fi
 
@@ -40,14 +40,14 @@ then
 
 	if [ ${STDIN_DATA_PRESENT} -eq 1 ]
 	then
-		java ${USER_PROPERTIES} -cp "${ERVIZ_JAR_NAME}" ${MAIN_CLASS}
+		java ${USER_PROPERTIES} -cp "${ERWIZ_JAR_NAME}" ${MAIN_CLASS}
 	else
-		java ${USER_PROPERTIES} -cp "${ERVIZ_JAR_NAME}" ${MAIN_CLASS} "-h"
+		java ${USER_PROPERTIES} -cp "${ERWIZ_JAR_NAME}" ${MAIN_CLASS} "-h"
 	fi
 fi
 
 
-java ${USER_PROPERTIES} -cp "${ERVIZ_JAR_NAME}" ${MAIN_CLASS} "$@"
+java ${USER_PROPERTIES} -cp "${ERWIZ_JAR_NAME}" ${MAIN_CLASS} "$@"
 
 if [ $? -ge 1 ]
 then
