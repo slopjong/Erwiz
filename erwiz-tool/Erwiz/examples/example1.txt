@@ -1,4 +1,4 @@
-# Using Erviz 1.0.6
+# Using Erwiz 0.9.0
 {title: "Syn2Stock ERD V3"; title-size: 20}
 
 # Entities

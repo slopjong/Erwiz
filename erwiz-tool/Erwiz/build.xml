@@ -23,6 +23,9 @@
 	<!-- htmldoc -->
 	<property name="htmldoc_dir" value="./htmldoc"/>
 
+	<!-- release dir -->
+	<property name="release_dir" value="${basedir}/../${app_name}-${app_ver}"/>
+	
 	<!-- ==== targets =============================================================================== -->
 	<target name="jar" depends="build-src,copy-resources">
 		<mkdir dir="${jar_dir}"/>
@@ -78,7 +81,7 @@
 	    />
 	</target>
 
-	<target name="htmldoc">
+	<target name="htmldoc" depends="webserver:launch">
 		<delete dir="${htmldoc_dir}" />
 		<delete dir="127.0.0.1:7777" />
 		<exec executable="wget">
@@ -119,7 +122,34 @@
 	</target>
 
 	<!-- Release packaging -->
-	<target name="package">
-	</target>	
 	
+	<target name="package:clean">
+		<delete file="${basedir}/../${app_name}-${app_ver}-bin.tar.gzip"/>
+		<delete file="${basedir}/../${app_name}-${app_ver}-src.tar.gzip"/>
+		<delete file="${basedir}/../${app_name}-${app_ver}-bin.tar"/>
+		<delete file="${basedir}/../${app_name}-${app_ver}-src.tar"/>
+	</target>
+	
+	<target name="package:bin" depends="jar,package:clean,htmldoc">
+		<tar compression="gzip" destfile="${basedir}/../${app_name}-${app_ver}-bin.tar.gz">
+			<tarfileset dir="bin" filemode="755" prefix="${app_name}-${app_ver}-bin/bin" />
+			<tarfileset dir="jar" prefix="${app_name}-${app_ver}-bin/jar" />
+			<tarfileset dir="examples" prefix="${app_name}-${app_ver}-bin/examples" />
+			<tarfileset dir="htmldoc" prefix="${app_name}-${app_ver}-bin/htmldoc" />
+			<tarfileset file="license.txt" prefix="${app_name}-${app_ver}-bin" />
+			<tarfileset file="RTFM.txt" prefix="${app_name}-${app_ver}-bin" />
+		</tar>
+	</target>
+
+	<target name="package:src" depends="package:clean,htmldoc">
+		<tar compression="gzip" destfile="${basedir}/../${app_name}-${app_ver}-src.tar.gz">
+			<tarfileset dir="bin" filemode="755" prefix="${app_name}-${app_ver}-src/bin" />
+			<tarfileset dir="examples" prefix="${app_name}-${app_ver}-src/examples" />
+			<tarfileset dir="src" prefix="${app_name}-${app_ver}-src/src" />
+			<tarfileset dir="htmldoc" prefix="${app_name}-${app_ver}-src/htmldoc" />
+			<tarfileset file="build.xml" prefix="${app_name}-${app_ver}-src" />
+			<tarfileset file="license.txt" prefix="${app_name}-${app_ver}-src" />
+			<tarfileset file="RTFM.txt" prefix="${app_name}-${app_ver}-SRC" />
+		</tar>
+	</target>
 </project>
