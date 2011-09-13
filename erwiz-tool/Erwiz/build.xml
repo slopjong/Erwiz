@@ -20,6 +20,9 @@
 	<!-- javadoc -->
 	<property name="javadoc_dir" value="./javadoc"/>
 
+	<!-- htmldoc -->
+	<property name="htmldoc_dir" value="./htmldoc"/>
+
 	<!-- ==== targets =============================================================================== -->
 	<target name="jar" depends="build-src,copy-resources">
 		<mkdir dir="${jar_dir}"/>
@@ -35,8 +38,8 @@
 	</target>
 
 	<target name="build-all" depends="jar,javadoc">
-	</target>	
-	
+	</target>
+
 	<target name="clean">
 		<delete dir="${class_dir}"/>
 		<mkdir dir="${class_dir}"/>
@@ -44,6 +47,7 @@
 
 	<target name="clean-all" depends="clean">
 		<delete dir="${javadoc_dir}"/>
+		<delete dir="${htmldoc_dir}"/>
 		<delete dir="${jar_dir}"/>
 	</target>
 
@@ -74,40 +78,48 @@
 	    />
 	</target>
 
+	<target name="htmldoc">
+		<delete dir="${htmldoc_dir}" />
+		<delete dir="127.0.0.1:7777" />
+		<exec executable="wget">
+			<arg value="-r"/>
+			<arg value="http://127.0.0.1:7777"/>
+		</exec>
+		<move todir="htmldoc">
+			<fileset dir="127.0.0.1:7777"/>
+		</move>
+	</target>
+
+
 	<!-- webserver launching/stopping targets -->
-	
-	<target name="webserver:createdocrootpath">
+
+	<target name="webserver:launch">
 		<exec executable="mkdir">
 			<arg value="-p"/>
 			<arg value="/tmp/erwiz"/>
 		</exec>
-	</target>
-
-	<target name="webserver:removedocroot">
-		<exec executable="rm">
-			<arg value="-rf"/>
-			<arg value="/tmp/erwiz/docroot"/>
-		</exec>
-	</target>
-			
-	<target name="webserver:linkdocroot">
 		<exec executable="ln">
 			<arg value="-s"/>
 			<arg value="${basedir}/docs/docroot"/>
 			<arg value="/tmp/erwiz"/>
 		</exec>
+		<exec executable="lighttpd">
+			<arg value="-f${basedir}/docs/lighttpd.conf"/>
+		</exec>
 	</target>
-	
-	<target name="webserver:launch" depends="webserver:createdocrootpath,webserver:linkdocroot">
-	  <exec executable="lighttpd">
-	  	<arg value="-f${basedir}/docs/lighttpd.conf"/>
-	  </exec>
+
+	<target name="webserver:stop">
+		<exec executable="pkill">
+			<arg value="lighttpd"/>
+		</exec>
+		<exec executable="rm">
+			<arg value="-rf"/>
+			<arg value="/tmp/erwiz/docroot"/>
+		</exec>
 	</target>
-	
-	<target name="webserver:stop" depends="webserver:removedocroot">
-	  <exec executable="pkill"> 
-	  	<arg value="lighttpd"/>
-	  </exec>
-	</target>
+
+	<!-- Release packaging -->
+	<target name="package">
+	</target>	
 	
 </project>
