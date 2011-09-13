@@ -1,2 +1,2 @@
 clean:
-	rm -rf erviz* pkg src
+	rm -rf erwiz* pkg src

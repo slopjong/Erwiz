@@ -1,35 +1,32 @@
 # Maintainer: Romain Schmitz <archlinux.org: slopjong>
-pkgname=erviz
-pkgver=1.0.6
+pkgname=erwiz
+pkgver=0.9.0
 pkgrel=1
 pkgdesc="A tool to create easily entity-relation models."
 arch=('i686' 'x86_64')
 url="http://slopjong.de/2011/02/26/whats-erviz"
 license=('BSD')
-depends=('jdk>=7-3' 'graphviz')
-makedepends=('apache-ant' 'unzip')
+depends=('openjdk6' 'graphviz')
+makedepends=('apache-ant')
 changelog=
-source=(http://slopjong.de/wp-content/2011/02/$pkgname-$pkgver-src.zip)
-noextract=($pkgname-$pkgver-src.zip)
-md5sums=(90d8a9c7dc74b07cfb44484823ed0059)
-sha256sums=(b9273fff329550951d57bcf201be85e5a9cfe0d1592bfc90077a2a385b274565)
+source=(https://source.hacker.lu/attachments/download/210/erwiz-0.9.0-src.tar.gz)
+md5sums=(bfb85633ab42ef7d112ed900d02eaf10)
 
 build() {
-  echo "building"
-  unzip $pkgname-$pkgver-src.zip -d $srcdir
-  cd $pkgname-$pkgver/erviz
-  /usr/share/java/apache-ant/bin/ant
-  cd release-files
-  chmod u+x setup.sh
-  ./setup.sh
-  rm -rf readme_1st.txt _setup_ setup*
-  chmod 755 bin/*.sh
+  cd ${srcdir}/${pkgname}-${pkgver}-src
+  ant
 }
 
 package() {
-  cd $pkgname-$pkgver/erviz
-  mkdir -p $pkgdir/opt
-  cp -R release-files $pkgdir/opt/$pkgname-$pkgver
+  echo "package"
+  cd ${srcdir}/${pkgname}-${pkgver}-src
+  rm -rf build.xml classes src
+  cd -
+  mkdir -p $pkgdir/usr/share/java
+  cp -R ${srcdir}/${pkgname}-${pkgver}-src $pkgdir/usr/share/java/${pkgname}-${pkgver}
+  mkdir -p $pkgdir/usr/bin
+  cd $pkgdir/usr/bin
+  ln -s ../share/java/${pkgname}-${pkgver}/bin/erwiz
 }
 
 # vim:set ts=2 sw=2 et:
