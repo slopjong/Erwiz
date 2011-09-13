@@ -1,0 +1,23 @@
+<!--#include file="header.shtml" -->
+<h1>Prerequisites</h1>
+
+<div id="content">
+	<p>Erwiz needs the following software:</p>
+	<ul>
+		<li>
+			<a href="http://java.com/en/download/index.jsp" target="_blank">
+			Java Runtime Environment (JRE) 6</a>
+		</li>
+		<li>
+			<a href="http://www.graphviz.org/Download.php" target="_blank">
+			Graphviz - Graph Visualization Software (Version 2.26 or later is recommended)</a>
+		</li>
+	</ul>
+	
+	<p>You can download them from the URLs.
+		(You can also use a package management system like APT, RPM, etc.)</p>
+	
+	<p>Note that Erwiz doesn't link Graphviz statically or dynamically.
+		It only launches the dot command in Graphviz package.</p>
+</div>
+<!--#include file="footer.shtml" -->

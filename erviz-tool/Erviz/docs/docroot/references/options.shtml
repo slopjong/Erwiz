@@ -1,0 +1,78 @@
+<!--#include file="header.shtml" -->
+
+	<div id="sample-links">
+		[<a href="./cardinality-list.shtml">Previous Page</a>]
+		<span>
+		[5 of 6]
+		</span>
+		[<a href="./misc.shtml">Next Page</a>]
+	</div>
+	
+	<div id="content">
+		<table id="erwiz-options" summary="The Options Supported by Erwiz">
+			
+			<caption>The Options Supported by Erwiz</caption>
+			<tr>
+				<th>Target</th>
+				<th>Option Name</th>
+				<th>Description</th>
+			</tr>
+			
+			<tr>
+				<td class="target" rowspan="3">Global</td>
+				<td class="option-name">title</td>
+				<td class="description">The title of the ERD.</td>
+			</tr>
+			
+			<tr>
+				<td class="option-name">title-size</td>
+				<td class="description">The size of title.</td>
+			</tr>
+			
+			<tr>
+				<td class="option-name">link-files</td>
+				<td class="description">
+					The file path or URL to link files with entities. This option is for svg or map.<br />
+					The "${entity}" in the specified string is replaced to the entity name.
+				</td>
+			</tr>
+			
+			<tr>
+				<td class="target" rowspan="2">Entity</td>
+				<td class="option-name">color</td>
+				<td class="description">The color of the entity. (white/red/blue/green/yellow/orange)</td>
+			</tr>
+			
+			<tr>
+				<td class="option-name">mark</td>
+				<td class="description">The arbitrary phrase to mark an entity with.</td>
+			</tr>
+			
+			<tr>
+				<td class="target" rowspan="1">Attribute</td>
+				<td class="option-name">mark</td>
+				<td class="description">The arbitrary phrase to mark an attribute with.</td>
+			</tr>
+			
+			<tr>
+				<td class="target" rowspan="3">Relationship</td>
+				<td class="option-name">n1</td>
+				<td class="description">The arbitrary cardinality string for the first entity.</td>
+			</tr>
+			
+			<tr>
+				<td class="option-name">n2</td>
+				<td class="description">The arbitrary cardinality string for the second entity.</td>
+			</tr>
+			
+			<tr>
+				<td class="option-name">verb-reverse</td>
+				<td class="description">True if the direction of verb phrase should be reversed.</td>
+			</tr>
+			
+		</table>
+	</div>
+	
+	<hr />
+
+<!--#include file="footer.shtml" -->

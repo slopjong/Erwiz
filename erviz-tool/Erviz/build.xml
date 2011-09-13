@@ -74,4 +74,40 @@
 	    />
 	</target>
 
+	<!-- webserver launching/stopping targets -->
+	
+	<target name="webserver:createdocrootpath">
+		<exec executable="mkdir">
+			<arg value="-p"/>
+			<arg value="/tmp/erwiz"/>
+		</exec>
+	</target>
+
+	<target name="webserver:removedocroot">
+		<exec executable="rm">
+			<arg value="-rf"/>
+			<arg value="/tmp/erwiz/docroot"/>
+		</exec>
+	</target>
+			
+	<target name="webserver:linkdocroot">
+		<exec executable="ln">
+			<arg value="-s"/>
+			<arg value="${basedir}/docs/docroot"/>
+			<arg value="/tmp/erwiz"/>
+		</exec>
+	</target>
+	
+	<target name="webserver:launch" depends="webserver:createdocrootpath,webserver:linkdocroot">
+	  <exec executable="lighttpd">
+	  	<arg value="-f${basedir}/docs/lighttpd.conf"/>
+	  </exec>
+	</target>
+	
+	<target name="webserver:stop" depends="webserver:removedocroot">
+	  <exec executable="pkill"> 
+	  	<arg value="lighttpd"/>
+	  </exec>
+	</target>
+	
 </project>

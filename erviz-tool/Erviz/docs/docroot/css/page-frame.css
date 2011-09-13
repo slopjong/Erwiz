@@ -1,0 +1,85 @@
+@charset "utf-8";
+
+/*
+ * ページの枠表示と枠に付随するヘッダ・フッタなどのスタイル設定
+ */
+
+
+/* page-frame ****************************************************************/
+
+#page-frame {
+	width: 920px;
+	border: 1px solid #A0A0A0;
+	margin: 5px auto;
+}
+
+#page-frame #top-bar {
+	margin: 0;
+	border: 0;
+	background: #77BBFF;
+	height: 8px;
+}
+
+
+/* page footer (copyright for Simply Software) ********************************/
+
+#page-frame #page-footer {
+	text-align: center;
+	font-size: 90%;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border-top: 1px solid #A0A0A0;
+	margin-top: 10px;
+}
+
+
+/* logo (Simply Software) *****************************************************/
+
+#logo {
+	font-size: 32px;
+	font-weight: normal;
+	font-family: "Courier New", Courier, mono;
+	color: #0099CC;
+	padding: 12px 0 0 10px;
+}
+
+#logo a {
+	text-decoration: none;
+	color: #0099CC;
+}
+
+#logo a:hover {
+	text-decoration: none;
+	color: #0099CC;
+}
+
+
+/* copyright for low-ya *******************************************************/
+
+#p-copy {
+	width: 920px;
+	text-align: left;
+}
+
+#p-copy p a {
+	background: url(../images/common/copy_pondt_wt.gif) no-repeat;
+	display: block;
+	width: 29px;
+	height: 13px;
+	text-indent: -9999px;
+	margin: 5px 0 0 891px;
+}
+
+
+/* print *********************************************************************/
+
+@media print {
+	#page-frame {
+		border-style: none;
+	}
+	
+	#top-bar, #page-footer, #logo, #p-copy {
+		display: none;
+	}
+}
+

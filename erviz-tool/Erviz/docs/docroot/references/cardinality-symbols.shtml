@@ -1,0 +1,59 @@
+<!--#include file="header.shtml" -->
+	<div id="sample-links">
+		[<a href="./parsing-dependency.shtml">Previous Page</a>]
+		<span>
+		[3 of 6]
+		</span>
+		[<a href="./cardinality-list.shtml">Next Page</a>]
+	</div>
+	
+	<table id="cardinality-symbols" summary="The list of the cardinality symbols for Erwiz">
+		
+		<caption>The Cardinality Symbols for Erwiz</caption>
+		<tr>
+			<th>Symbol</th>
+			<th>Meaning</th>
+			<th>Cardinality</th>
+			<th>Optionality</th>
+		</tr>
+		
+		<tr>
+			<td class="symbol">?</td>
+			<td class="meaning">0 or 1</td>
+			<td class="cardinality">One</td>
+			<td class="optionality">Optional</td>
+		</tr>
+		
+		<tr>
+			<td class="symbol">1</td>
+			<td class="meaning">1</td>
+			<td class="cardinality">One</td>
+			<td class="optionality">Mandatory</td>
+		</tr>
+		
+		<tr>
+			<td class="symbol">*</td>
+			<td class="meaning">grater than or equal to 0</td>
+			<td class="cardinality">Many</td>
+			<td class="optionality">Optional</td>
+		</tr>
+		
+		<tr>
+			<td class="symbol">+</td>
+			<td class="meaning">grater than or equal to 1</td>
+			<td class="cardinality">Many</td>
+			<td class="optionality">Mandatory</td>
+		</tr>
+		
+		<tr>
+			<td class="symbol">-</td>
+			<td class="meaning">not specified</td>
+			<td class="cardinality">Unknown</td>
+			<td class="optionality">Unknown</td>
+		</tr>
+		
+	</table>
+	
+	<hr />
+	
+<!--#include file="footer.shtml" -->

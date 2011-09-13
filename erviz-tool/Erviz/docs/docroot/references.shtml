@@ -1,0 +1,47 @@
+<!--#include file="header.shtml" -->
+<h1>References</h1>
+
+<div id="content">
+	<p>Reference pages for Erviz</p>
+	
+	<ul>
+		<li>
+			<a href="./references/dependency-of-entity.shtml">
+				Independent Entities and Dependent Entities in Erviz
+			</a>
+		</li>
+		
+		<li>
+			<a href="./references/parsing-dependency.shtml">
+				Parsing Dependency of Entities by Erviz
+			</a>
+		</li>
+		
+		<li>
+			<a href="./references/cardinality-symbols.shtml">
+				The Cardinality Symbols for Erviz
+			</a>
+		</li>
+		
+		<li>
+			<a href="./references/cardinality-list.shtml">
+				The Possible Relationships between Two Entities
+			</a>
+		</li>
+		
+		<li>
+			<a href="./references/options.shtml">
+				The Options Supported by Erviz
+			</a>
+		</li>
+		
+		<li>
+			<a href="./references/misc.shtml">
+				Miscellaneous Notes about Erviz
+			</a>
+		</li>
+	</ul>
+	
+	<p>See also <a href="./samples.shtml">Samples and Tutorials</a>.</p>
+</div>
+<!--#include file="footer.shtml" -->

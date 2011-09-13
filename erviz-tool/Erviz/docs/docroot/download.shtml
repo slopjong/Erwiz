@@ -1,0 +1,8 @@
+<!--#include file="header.shtml" -->
+<h1>Download</h1>
+
+<div id="content">
+	<p>Get the latast version of <strong>Erwiz</strong> from 
+		<a href="https://source.hacker.lu/projects/-12" target="_blank">the project page</a>.</p>
+</div>
+<!--#include file="footer.shtml" -->

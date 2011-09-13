@@ -1,0 +1,27 @@
+<!--#include file="header.shtml" -->
+
+	<div id="sample-links">
+		[Previous Page]
+		<span>
+		[1 of 6]
+		</span>
+		[<a href="./parsing-dependency.shtml">Next Page</a>]
+	</div>
+	
+	<div id="content">
+		<h1>Independent Entities and Dependent Entities in Erwiz</h1>
+		
+		<p>If an entity satisfy at least one of the following conditions, 
+			Erwiz regards the entity as a dependent entity.</p>
+		<ul>
+			<li>The entity name is enclosed by round brackets in the text data.</li>
+			<li>The entity has at least one attribute which is both primary key and foreign key.</li>
+			<li>The entity is specified as the dependent entity in at least one identifying relationships.</li>
+		</ul>
+		
+		<p>If an entity is not dependent, it is independent.</p>
+	</div>
+	
+	<hr />
+	
+<!--#include file="footer.shtml" -->

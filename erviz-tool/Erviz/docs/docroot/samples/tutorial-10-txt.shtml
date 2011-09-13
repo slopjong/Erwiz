@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="content-script-type" content="text/javascript" />
+<meta http-equiv="content-style-type" content="text/css" />
+<meta http-equiv="imagetoolbar" content="no" />
+<link href="../../../../css/default.css" rel="stylesheet" type="text/css" />
+<link href="../../../../css/sample-pages.css" rel="stylesheet" type="text/css" />
+<link href="../../../../css/menu.css" rel="stylesheet" type="text/css" />
+<meta name="keywords" content="ERD,Entity Relationship Diagram,Graphviz,Erwiz" />
+<meta name="description" content="A text data for Erwiz (Tutorial 10)" />
+<title>A text data for Erwiz (Tutorial 10)</title>
+</head>
+<body>
+
+<div id="container">
+	
+	<div id="header-links">
+		Back to 
+				[<a href="../index.shtml">What is Erwiz?</a>] 
+		[<a href="../samples.shtml">Samples and Tutorials</a>]
+	</div>
+	
+	<hr />
+	<div id="sample-links">
+		[<a href="./tutorial-09-txt.shtml">Preveous Diagram</a>]
+		<span>
+		[
+		Text
+		 | <a href="./tutorial-10-ie-png.shtml">IE</a>
+		 | <a href="./tutorial-10-idef1x-png.shtml">IDEF1X</a>
+		]
+		</span>
+		[Next Diagram]
+	</div>
+	
+	<div id="content">
+		<h1>A text data for Erwiz (Tutorial 10)</h1>
+		
+		<pre><code><span class="comment">#</span>
+<span class="comment"># This is a sample text file for Erwiz 1.0.4. (Tutorial 10)</span>
+<span class="comment">#</span>
+
+<span class="comment"># </span>
+<span class="comment"># Some Options</span>
+<span class="comment"># </span>
+<span class="comment"># In this file, some options are introduced.</span>
+<span class="comment"># </span>
+<span class="comment"># The options supported by Erwiz are classified into the following groups:</span>
+<span class="comment">#   * Global options (which are applied to the whole ERD)</span>
+<span class="comment">#   * Entity options (which are applied to entities)</span>
+<span class="comment">#   * Entity attribute options (which are applied to entity attributes)</span>
+<span class="comment">#   * Relationship options (which are applied to relationships)</span>
+<span class="comment"># </span>
+<span class="comment"># Options are enclosed by curly brackets, and is normally positioned after the target element.</span>
+<span class="comment"># The option name and the option value in a option are separated by &quot;:&quot;.</span>
+<span class="comment"># If multiple options are specified in a pair of curly brackets, they are separated by &quot;;&quot;.</span>
+<span class="comment"># Option names are case insensitive.</span>
+<span class="comment"># </span>
+<span class="comment"># As of current version, Erwiz supports the following options:</span>
+<span class="comment">#   * title</span>
+<span class="comment">#       Global option. The title of the ERD.</span>
+<span class="comment">#   * title-size</span>
+<span class="comment">#       Global option. The size of title. (default:12)</span>
+<span class="comment">#   * color</span>
+<span class="comment">#       Entity option. The color of the entity.</span>
+<span class="comment">#   * mark</span>
+<span class="comment">#       Entity option or entity attribute option. The arbitrary phrase.</span>
+<span class="comment">#   * N1</span>
+<span class="comment">#       Relationship option. The arbitrary cardinality string for the first entity.</span>
+<span class="comment">#   * N2</span>
+<span class="comment">#       Relationship option. The arbitrary cardinality string for the second entity.</span>
+<span class="comment">#   </span>
+<span class="comment">#   NOTE: some options are omitted in the above list.</span>
+<span class="comment"># </span>
+
+{title: &quot;Some Options&quot;; title-size: 14}
+
+[Product]                 {mark: &quot;&lt;change&gt;&quot;; color: orange}
+*Product ID
+ Product Name
+ Standard Price
+ Product Category ID*     {mark: &quot;&lt;new&gt;&quot;}
+
+[Product Category]        {mark: &quot;&lt;new&gt;&quot;; color: red}
+*Product Category ID
+ Product Category Name
+ Parent Category ID*
+
+[Supplier]                {color: blue}
+*Supplier ID
+ Supplier Name
+ Area ID*
+
+[Product Supply]          {color: green}
+*Product ID*
+*Supplier ID*
+*Sequence Number
+ Begin Date
+ End Date
+
+[Phone Number]
+
+[Product] *--1 [Product Category]
+
+[Product Category] *--? [Product Category]
+
+[Product] 1--* (Product Supply)
+
+[Supplier] 1--* (Product Supply)
+
+[Supplier] ?--+ [Phone Number] {N1: &quot;0-1&quot;; N2: &quot;1-3&quot;}
+
+</code></pre>
+	</div>
+	<hr />
+	
+	<div id="footer-links">
+		Back to 
+				[<a href="../index.shtml">What is Erwiz?</a>] 
+		[<a href="../samples.shtml">Samples and Tutorials</a>]
+	</div>
+	
+</div>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!--#include file="header.shtml" -->
+<h1>Contacts</h1>
+
+<div id="content">
+
+
+	<p>Feel free to contact me for</p>
+	<ul>
+	<li>Bug reports</li>
+	<li>Feature requests</li>
+	<li>Any other subject</li>
+	</ul>
+	
+	<p class="mail"><a href="mailto:slopjong@hackerspace.lu">slopjong@hackerspace.lu</a></p>
+	
+	<br><br>
+</div>
+
+<div class="subsection">
+	<h1>Important</h1>
+	
+	<div id="content">
+	
+		<p>Erviz was originally developed by Mitsuru Kono, a Japanese guy of who nobody hears anything about since months. He never replied to emails and his website went down months ago and  due to that shutdown he cannot be contacted by email anymore.</p>
+		<p>I (Romain Schmitz) decided to continue his project as a fork to not let erviz die.</p>
+		
+
+	</div>
+</div>
+<!--#include file="footer.shtml" -->

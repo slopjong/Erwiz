@@ -1,0 +1,142 @@
+@charset "utf-8";
+
+
+/* lang-menu *****************************************************************/
+
+#lang-menu {
+	text-align: right;
+	font-size: 100%;
+	margin: 0 1.5em 2px 0;
+}
+
+#lang-menu-tp { /* for top page */
+	text-align: center;
+	font-size: 150%;
+	margin: 40px 0;
+}
+
+
+/* main-menu *****************************************************************/
+
+#main-menu {
+	width: 898px;
+	font-size: 120%;
+	background: #FAFAFA;
+	border: 1px solid #CCCCCC;
+	height: 1.9em;
+	margin-left: 10px;
+	margin-bottom: 8px;
+}
+
+#main-menu ul, #main-menu ol {
+	list-style-type: none;
+	margin: 0;
+}
+
+#main-menu li {
+	width: 8em;
+	float: left;
+	background: #FAFAFA;
+	border-right: 1px solid #CCCCCC;
+	text-align: center;
+	height: 1.9em;
+	line-height: 2.0em;
+	margin: 0;
+}
+
+#main-menu li.selected {
+	background-color: #CCDDFF;
+}
+
+#main-menu a {
+	color: #333333;
+	text-decoration: none;
+}
+
+#main-menu a:hover {
+	color: #0099CC;
+}
+
+
+/* sub-menu ******************************************************************/
+
+#sub-menu {
+	width: 180px;
+	float: left;
+}
+
+#sub-menu ul, #sub-menu ol {
+	list-style-type: none;
+	margin: 0;
+}
+
+#sub-menu li {
+	margin-bottom: 0;
+}
+
+#sub-menu ul.level-1 li {
+	width: 180px;
+	border: solid 1px #CCCCCC;
+}
+
+#sub-menu ul.level-1 div.name {
+	font-size: 100%;
+	font-weight: bold;
+	text-indent: 0.2em;
+	background: #EBEBEB;
+}
+
+#sub-menu ul.level-2 li {
+	width: 180px;
+	line-height: 24px;
+	font-size: 90%;
+	text-indent: 1em;
+	border-top: 1px dashed #CCCCCC;
+	border-bottom: none;
+	border-left: none;
+	border-right: none;
+}
+
+#sub-menu ul.level-2 li.selected {
+	background-color: #CCDDFF;
+}
+
+#sub-menu ul.level-2 li a {
+	color: #707070;
+	text-decoration: none;
+}
+
+#sub-menu ul.level-2 li a:hover {
+	color: #FF9900;
+	text-decoration: none;
+}
+
+
+/* other menus ****************************************************************/
+
+#header-links, #footer-links {
+	font-size: 110%;
+}
+
+#sample-links {
+	font-size: 110%;
+	text-align: left;
+	margin: 10px 0 0 0;
+}
+
+#sample-links span {
+	margin: 0 10px;
+}
+
+hr {
+	margin: 10px 0;
+}
+
+
+/* print *********************************************************************/
+
+@media print {
+	#lang-menu, #lang-menu-tp, #main-menu, #sub-menu, #header-links, #footer-links, #sample-links, hr {
+		display: none;
+	}
+}

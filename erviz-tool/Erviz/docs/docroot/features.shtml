@@ -1,0 +1,67 @@
+<!--#include file="header.shtml" -->
+<h1>The Features of Erwiz</h1>
+
+<div id="content">
+	<p>The <strong>features</strong> of <strong>Erwiz</strong> are as follows:</p>
+	
+	<ul>
+		<li>
+			<h2>Text-Based Data Models</h2>
+			Erwiz supports a simple language to describe data models.<br />
+			For details, see <a href="samples.shtml">Samples and Tutorials</a>.
+		</li>
+		
+		<li>
+			<h2>Cooperation with Graphviz</h2>
+			Erwiz generates DOT-formatted graphical files for Graphviz.
+		</li>
+		
+		<li>
+			<h2>Freeware</h2>
+			Erwiz is charge-free to use.
+		</li>
+		
+		<li>
+			<h2>Easy to Setup</h2>
+			Download the zip file and unzip it, then you can use Erwiz at once.<br />
+			Note: To install Java and Graphviz, a little more time is needed.
+		</li>
+		
+		<li>
+			<h2>ERD Notations<	/h2>
+			Erwiz supports IE and IDEF1X notations. (IE: Information Engineering by James Martin)<br />
+			You can easily switch these notations on generation time.
+		</li>
+		
+		<li>
+			<h2>Automatic Arrangement of Entities</h2>
+			The user doesn't specify the positions of each entities.<br />
+			Graphviz arranges them automatically.
+		</li>
+		
+		<li>
+			<h2>Image File Formats</h2>
+			PNG, JPEG, SVG, PDF, etc.<br />
+			It depends  on Grapnviz.
+		</li>
+		
+		<li>
+			<h2>Multi-Platforms</h2>
+			Windows, Linux, Mac OS, Solaris, etc.<br />
+			Erwiz works on various operating systems because it's a Java application, 
+		</li>
+		
+		<li>
+			<h2>Multi-Languages</h2>
+			English, Japanese, German, Spanish, Chinese, etc.<br />
+			Erwiz supports UTF-8 encoded text in input/output data files.
+		</li>
+		
+		<li>
+			<h2>Open-Source Software</h2>
+			The <a href="license.shtml">New BSD License</a> is applied to Erwiz.
+		</li>
+		
+	</ul>
+</div>
+<!--#include file="footer.shtml" -->
