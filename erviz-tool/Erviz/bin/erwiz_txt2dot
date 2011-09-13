@@ -5,8 +5,8 @@
 #   * http://blog.fpmurphy.com/2010/07/localizing-korn-shell-scripts.html
 
 
-ERWIZ_JAR_NAME_PATTERN="ERWIZ-*.*.*.jar"
-ERWIZ_JAR_PATH_PATTERN="/usr/share/java/erwiz/jar/${ERWIZ_JAR_NAME_PATTERN}"
+ERWIZ_JAR_NAME_PATTERN="erwiz-*.*.*.jar"
+ERWIZ_JAR_PATH_PATTERN=`dirname $0`"/../jar/${ERWIZ_JAR_NAME_PATTERN}"
 
 MAIN_CLASS="de.slopjong.erwiz.cui.Main"
 
@@ -18,7 +18,7 @@ done
 
 if [ "${ERWIZ_JAR_NAME}" = "" ]
 then
-	echo "The ERWIZ library could not be found: ${ERWIZ_JAR_NAME_PATTERN}" 1>&2
+	echo "The erwiz library could not be found: ${ERWIZ_JAR_NAME_PATTERN}" 1>&2
 	exit 1
 fi
 
