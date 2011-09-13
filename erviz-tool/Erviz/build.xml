@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE project [<!ENTITY common SYSTEM "common.xml">]>
 
-<project name="Erviz" default="jar" basedir=".">
+<project name="Erwiz" default="jar" basedir=".">
 
 	<!-- basic -->
 	<property name="src_dir" value="./src"/>
 	<property name="class_dir" value="./classes"/>
-	<property name="main_class" value="de.slopjong.erviz.cui.Main"/>
+	<property name="main_class" value="de.slopjong.erwiz.cui.Main"/>
 
 	<!-- application information (read from a properties file) -->
-	<property file="${src_dir}/de/slopjong/erviz/common/resources/app_info.properties"/>
+	<property file="${src_dir}/de/slopjong/erwiz/common/resources/app_info.properties"/>
 	<property name="app_name" value="${app.name.lower}"/>
 	<property name="app_ver" value="${app.version}"/>
 
