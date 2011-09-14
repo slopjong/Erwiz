@@ -9,7 +9,7 @@ license=('BSD')
 depends=('openjdk6' 'graphviz')
 makedepends=('apache-ant')
 changelog=
-source=(https://source.hacker.lu/attachments/download/210/erwiz-0.9.0-src.tar.gz)
+source=(https://source.hacker.lu/attachments/download/212/erwiz-0.9.0-src.tar.gz)
 #source=(erwiz-0.9.0-src.tar.gz)
 md5sums=(466d6a877ae8665e041c2491da1005d6)
 
