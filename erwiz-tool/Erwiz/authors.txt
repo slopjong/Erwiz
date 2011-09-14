@@ -1,0 +1,12 @@
+Mitsuru Kono is the principal architect of Erwiz which formerly was Erviz. Since
+the Erviz project seems to be discontinued it was forked and rebranded as Erwiz.
+The Erwiz distribution is maintained by Romain Schmitz.
+
+We acknowledge the substantial contributions to the Erwiz project by
+these gifted individuals (listed in alphabetical order):
+
+Mitsuru Kono
+	Authored the Erwiz code base and translated it to English and Japanese.
+	
+Romain Schmitz
+	Maintains the Linux packages. 

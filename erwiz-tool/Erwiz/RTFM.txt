@@ -20,4 +20,6 @@
   	
   To make erwiz system-wide available create a symbolic link:
   
-  	ln -s path/to/your/erwiz
+  	ln -s path/to/your/erwiz /usr/bin
+  	
+  Be sure to use the complete absolute path to erwiz.
