@@ -11,7 +11,7 @@ makedepends=('apache-ant')
 changelog=
 source=(https://source.hacker.lu/attachments/download/210/erwiz-0.9.0-src.tar.gz)
 #source=(erwiz-0.9.0-src.tar.gz)
-md5sums=(3558e16e43ff394a83d709b85ef61ddf)
+md5sums=(466d6a877ae8665e041c2491da1005d6)
 
 build() {
   cd ${srcdir}/${pkgname}-${pkgver}-src
@@ -21,9 +21,7 @@ build() {
 package() {
   
   # delete everything which shouldn't get installed
-  cd ${srcdir}/${pkgname}-${pkgver}-src
-  rm -rf build.xml classes src
-  cd -
+  rm -rf ${srcdir}/${pkgname}-${pkgver}-src/{build.xml,classes,src}
   
   # install erwiz in the fake filesystem
   mkdir -p $pkgdir/usr/share/java
