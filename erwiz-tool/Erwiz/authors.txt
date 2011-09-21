@@ -6,7 +6,7 @@ We acknowledge the substantial contributions to the Erwiz project by
 these gifted individuals (listed in alphabetical order):
 
 Mitsuru Kono
-	Authored the Erwiz code base and translated it to English and Japanese.
+	Authored the Erviz code base and worked on the English and Japanese translations.
 	
 Romain Schmitz
-	Maintains the Linux packages. 
+	Maintains the current Erwiz project and Linux packages. 
