@@ -10,7 +10,7 @@ depends=('openjdk6' 'graphviz')
 changelog=
 source=(http://erwiz.de/download/erwiz-0.9.0-bin.tar.gz)
 #source=(erwiz-0.9.0-bin.tar.gz)
-md5sums=(e00c3e527c934b5e1d75b1d9ea1376e1)
+md5sums=(84fbf110907f3a657027cdb4c4140a08)
 
 package() {
   
