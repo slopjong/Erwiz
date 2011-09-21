@@ -1,4 +1,4 @@
-# Maintainer: Romain Schmitz <archlinux.org: slopjong>
+# Maintainer: Romain Schmitz <slopjong [[at]] hackerspace [[dot]] lu>
 pkgname=erwiz
 pkgver=0.9.0
 pkgrel=1
