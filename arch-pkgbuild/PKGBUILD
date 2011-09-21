@@ -2,7 +2,7 @@
 pkgname=erwiz
 pkgver=0.9.0
 pkgrel=1
-pkgdesc="A tool to create easily entity-relation models."
+pkgdesc="A lightweight tool to create easily entity-relationship models."
 arch=('i686' 'x86_64')
 url="http://erwiz.org"
 license=('custom:BSD')
@@ -10,7 +10,7 @@ depends=('openjdk6' 'graphviz')
 changelog=
 source=(http://erwiz.de/download/erwiz-0.9.0-bin.tar.gz)
 #source=(erwiz-0.9.0-bin.tar.gz)
-md5sums=(84fbf110907f3a657027cdb4c4140a08)
+md5sums=(5543ec6afb454ee71ba16d96ba10e217)
 
 package() {
   

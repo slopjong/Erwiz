@@ -130,7 +130,19 @@
 		<delete file="${basedir}/../${app_name}-${app_ver}-src.tar"/>
 	</target>
 	
-	<target name="package:bin" depends="jar,htmldoc">
+	<!-- - - - - - - - - - - - - - - - - - 
+          target: replace:md5                      
+         - - - - - - - - - - - - - - - - - -->
+    <target name="replace:md5">
+		<!-- the package-md5-bin property mustn't be set above !! -->
+		<checksum file="${basedir}/../${app_name}-${app_ver}-bin.tar.gz" property="package-md5-bin"/>
+		<exec executable="${basedir}/build/replace_md5.sh">
+			<arg value="${package-md5-bin}"/>
+			<arg value="../../arch-pkgbuild/PKGBUILD"/>
+		</exec>	
+    </target>
+
+	<target name="package:bin">
 		<delete file="${basedir}/../${app_name}-${app_ver}-bin.tar.gz"/>
 		<tar compression="gzip" destfile="${basedir}/../${app_name}-${app_ver}-bin.tar.gz">
 			<tarfileset dir="bin" filemode="755" prefix="${app_name}-${app_ver}-bin/bin" />
@@ -141,8 +153,9 @@
 			<tarfileset file="authors.txt" prefix="${app_name}-${app_ver}-bin" />
 			<tarfileset file="RTFM.txt" prefix="${app_name}-${app_ver}-bin" />
 		</tar>
+		<antcall target="replace:md5"/>
 	</target>
-
+	
 	<target name="package:src" depends="htmldoc">
 		<delete file="${basedir}/../${app_name}-${app_ver}-src.tar.gz"/>
 		<tar compression="gzip" destfile="${basedir}/../${app_name}-${app_ver}-src.tar.gz">
@@ -155,5 +168,6 @@
 			<tarfileset file="authors.txt" prefix="${app_name}-${app_ver}-src" />
 			<tarfileset file="RTFM.txt" prefix="${app_name}-${app_ver}-src" />
 		</tar>
+		<checksum file="${basedir}/../${app_name}-${app_ver}-src.tar.gz" property="package-md5-src"/>
 	</target>
 </project>
