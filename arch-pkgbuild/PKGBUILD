@@ -4,33 +4,33 @@ pkgver=0.9.0
 pkgrel=1
 pkgdesc="A tool to create easily entity-relation models."
 arch=('i686' 'x86_64')
-url="http://slopjong.de/2011/02/26/whats-erviz"
-license=('BSD')
+url="http://erwiz.org"
+license=('custom:BSD')
 depends=('openjdk6' 'graphviz')
-makedepends=('apache-ant')
 changelog=
-source=(https://source.hacker.lu/attachments/download/212/erwiz-0.9.0-src.tar.gz)
-#source=(erwiz-0.9.0-src.tar.gz)
-md5sums=(466d6a877ae8665e041c2491da1005d6)
-
-build() {
-  cd ${srcdir}/${pkgname}-${pkgver}-src
-  ant
-}
+source=(http://erwiz.de/download/erwiz-0.9.0-bin.tar.gz)
+#source=(erwiz-0.9.0-bin.tar.gz)
+md5sums=(e00c3e527c934b5e1d75b1d9ea1376e1)
 
 package() {
   
-  # delete everything which shouldn't get installed
-  rm -rf ${srcdir}/${pkgname}-${pkgver}-src/{build.xml,classes,src}
-  
   # install erwiz in the fake filesystem
   mkdir -p $pkgdir/usr/share/java
-  cp -R ${srcdir}/${pkgname}-${pkgver}-src $pkgdir/usr/share/java/${pkgname}-${pkgver}
+  cp -R ${srcdir}/${pkgname}-${pkgver}-bin $pkgdir/usr/share/java/${pkgname}-${pkgver}
+
+  # move the erwiz documentation to the right place
+  mkdir -p $pkgdir/usr/share/doc/${pkgname}
+  cd $pkgdir/usr/share/doc/${pkgname}
+  ln -s ../../java/${pkgname}-${pkgver}/htmldoc
+  
+  # copy the license to the license folder
+  mkdir -p $pkgdir/usr/share/licenses/${pkgname}
+  cp ${srcdir}/${pkgname}-${pkgver}-bin/license.txt $pkgdir/usr/share/licenses/${pkgname}/LICENSE
 
   # create a symlink to erwiz
   mkdir -p $pkgdir/usr/bin
   cd $pkgdir/usr/bin
-  ln -s ../share/java/${pkgname}-${pkgver}/bin/erwiz
+  ln -s ../share/java/${pkgname}-${pkgver}/bin/${pkgname}
 }
 
 # vim:set ts=2 sw=2 et:
