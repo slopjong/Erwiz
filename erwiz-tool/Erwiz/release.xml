@@ -1,22 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE project [<!ENTITY common SYSTEM "common.xml">]>
 
-<project name="erwiz-release" basedir=".">
+<project name="release" basedir=".">
 	
-	<dirname property="erwiz-release.basedir" file="${ant.file.erwiz-release}"/>
-	
-	<!-- application information (read from a properties file) -->
-	<property file="${erwiz-release.basedir}/../src/de/slopjong/erwiz/common/resources/app_info.properties"/>
-	<property name="app_name" value="${app.name.lower}"/>
-	<property name="app_ver" value="${app.version}"/>
-	
-	<!-- package dirs -->
-	<property name="package" value="${erwiz-release.basedir}/../package"/>
-	<property name="package:bin" value="${package}/bin" id="test"/>
-	<property name="package:src" value="${package}/src"/>
+	<import file="properties.xml"/>
 		
 	<!-- the release directories -->
-	<property name="releasedir" value="${erwiz-release.basedir}/../releases"/>
+	<property name="releasedir" value="${basedir}/releases"/>
 	<property name="releasedir:single" value="${releasedir}/single"/>
 	<property name="releasedir:linux" value="${releasedir}/linux"/>
 	<property name="releasedir:archlinux" value="${releasedir:linux}/archlinux"/>
@@ -26,17 +16,16 @@
 	<property name="releasedir:windows" value="${releasedir}/windows"/>
 	<property name="releasedir:mac" value="${releasedir}/mac"/>
 
+	<!--
 	<target name="echo">
 		<echo message="${releasedir}"></echo>
 		<echo message="${app_name}"></echo>
 		<echo message="${app_ver}"></echo>
-		<!--
-		<echo message="${releasedir}"></echo>
-		<echo message="${releasedir}"></echo>
-		<echo message="${releasedir}"></echo>
-		<echo message="${releasedir}"></echo>
-		-->
+		<echo message="${releasedir:single}"></echo>
+		<echo message="${releasedir:archlinux}"></echo>
+		<echo message="${releasedir:debian}"></echo>
 	</target>
+	-->
 	
 	<target name="release:clean">
 		<!--
@@ -53,7 +42,20 @@
 	<!--	##############
 			SINGLE RELEASE
 			############## -->
-	
+
+	<target name="release:single2">
+		
+		<tar compression="gzip" destfile="${releasedir:single}/${app_name}-${app_ver}-bin.tar.gz">
+			<!-- the files are defined seperately because bin needs to retain the file permissions -->
+			<tarfileset dir="${package:bin}/bin" filemode="755" prefix="${app_name}-${app_ver}-bin/bin" />
+			<tarfileset dir="${package:bin}/jar" prefix="${app_name}-${app_ver}-bin/jar" />
+			<tarfileset dir="${package:bin}/doc" prefix="${app_name}-${app_ver}-bin/doc" /> 
+			<tarfileset file="${package:bin}/license.txt" prefix="${app_name}-${app_ver}-bin" />
+			<tarfileset file="${package:bin}/authors.txt" prefix="${app_name}-${app_ver}-bin" />
+			<tarfileset file="${package:bin}/readme.txt" prefix="${app_name}-${app_ver}-bin" />
+		</tar>
+	</target>
+		
 	<target name="release:single">
 		<!-- the binary distribution -->
 		<tar compression="gzip" destfile="${releasedir:single}/${app_name}-${app_ver}-bin.tar.gz">

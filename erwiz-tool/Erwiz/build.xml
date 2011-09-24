@@ -3,32 +3,7 @@
 
 <project name="erwiz" default="jar" basedir=".">
 
-	<import file="${basedir}/releases/build.xml"/>
-
-	<!-- basic -->
-	<property name="src_dir" value="./src"/>
-	<property name="class_dir" value="./classes"/>
-	<property name="main_class" value="de.slopjong.erwiz.cui.Main"/>
-
-	<!-- application information (read from a properties file) -->
-	<property file="${src_dir}/de/slopjong/erwiz/common/resources/app_info.properties"/>
-	<property name="app_name" value="${app.name.lower}"/>
-	<property name="app_ver" value="${app.version}"/>
-
-	<!-- package dirs -->
-	<property name="package" value="${basedir}/package"/>
-	<property name="package:bin" value="${package}/bin" id="test"/>
-	<property name="package:src" value="${package}/src"/>
-	
-	<!-- jar -->
-	<property name="jar_dir" value="./jar"/>
-	<property name="jar_name" value="${app_name}-${app_ver}.jar"/>
-
-	<!-- javadoc -->
-	<property name="javadoc_dir" value="./javadoc"/>
-
-	<!-- htmldoc -->
-	<property name="htmldoc_dir" value="./htmldoc"/>
+	<import file="properties.xml"/>
 	
 	<target name="jar" depends="build-src">
 		<copy todir="${class_dir}">
@@ -132,13 +107,7 @@
 	<!-- 	Package means put all the files together in one directory which
 	 		will be the base for the release process.
 	-->
-	<target name="package" depends="build-all-all-for-release,package:clean,package:dist:bin,package:dist:src,releases">
-		<!--
-			<ant antfile="${basedir}/releases/build.xml" target="release" inheritrefs="true"/>
-		-->
-	</target>
-	
-	<target name="releases" depends="release">
+	<target name="package" depends="build-all-all-for-release,package:clean,package:dist:bin,package:dist:src">
 	</target>
 	
 	<target name="package:dist:bin">
@@ -154,6 +123,9 @@
 		<copy todir="${package:bin}/bin">
 			<fileset dir="bin"/>
 		</copy>
+		<exec executable="chmod">
+			<arg line="-R 755 ${package:bin}/bin"/>
+		</exec>
 		<copy file="readme.txt" todir="${package:bin}"/>
 		<copy file="authors.txt" todir="${package:bin}"/>
 		<copy file="license.txt" todir="${package:bin}"/>
@@ -172,10 +144,12 @@
 		<copy todir="${package:src}/bin">
 			<fileset dir="bin"/>
 		</copy>
+		<exec executable="chmod">
+			<arg line="-R 755 ${package:src}/bin"/>
+		</exec>
 		<copy file="readme.txt" todir="${package:src}"/>
 		<copy file="authors.txt" todir="${package:src}"/>
 		<copy file="license.txt" todir="${package:src}"/>
 		<copy file="build.xml" todir="${package:src}"/>
 	</target>
-
 </project>

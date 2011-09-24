@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE project [<!ENTITY common SYSTEM "common.xml">]>
+
+<project name="properties" basedir=".">
+	<!-- basic -->
+	<property name="src_dir" value="./src"/>
+	<property name="class_dir" value="./classes"/>
+	<property name="main_class" value="de.slopjong.erwiz.cui.Main"/>
+
+	<!-- application information (read from a properties file) -->
+	<property file="app_info.properties"/>
+	<property name="app_name" value="${app.name.lower}"/>
+	<property name="app_ver" value="${app.version}"/>
+
+	<!-- package dirs -->
+	<property name="package" value="${basedir}/package"/>
+	<property name="package:bin" value="${package}/bin" id="test"/>
+	<property name="package:src" value="${package}/src"/>
+	
+	<!-- jar -->
+	<property name="jar_dir" value="./jar"/>
+	<property name="jar_name" value="${app_name}-${app_ver}.jar"/>
+
+	<!-- javadoc -->
+	<property name="javadoc_dir" value="./javadoc"/>
+
+	<!-- htmldoc -->
+	<property name="htmldoc_dir" value="./htmldoc"/>
+</project>
