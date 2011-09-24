@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE project [<!ENTITY common SYSTEM "common.xml">]>
 
-<project name="Erwiz" default="jar" basedir=".">
+<project name="erwiz" default="jar" basedir=".">
+
+	<import file="${basedir}/releases/build.xml"/>
 
 	<!-- basic -->
 	<property name="src_dir" value="./src"/>
@@ -13,6 +15,11 @@
 	<property name="app_name" value="${app.name.lower}"/>
 	<property name="app_ver" value="${app.version}"/>
 
+	<!-- package dirs -->
+	<property name="package" value="${basedir}/package"/>
+	<property name="package:bin" value="${package}/bin" id="test"/>
+	<property name="package:src" value="${package}/src"/>
+	
 	<!-- jar -->
 	<property name="jar_dir" value="./jar"/>
 	<property name="jar_name" value="${app_name}-${app_ver}.jar"/>
@@ -22,12 +29,11 @@
 
 	<!-- htmldoc -->
 	<property name="htmldoc_dir" value="./htmldoc"/>
-
-	<!-- release dir -->
-	<property name="release_dir" value="${basedir}/../${app_name}-${app_ver}"/>
 	
-	<!-- ==== targets =============================================================================== -->
-	<target name="jar" depends="build-src,copy-resources">
+	<target name="jar" depends="build-src">
+		<copy todir="${class_dir}">
+			<fileset dir="${src_dir}" excludes="**/*.java"/>
+		</copy>
 		<mkdir dir="${jar_dir}"/>
 		<jar jarfile="${jar_dir}/${jar_name}" basedir="${class_dir}">
 			<manifest>
@@ -36,28 +42,22 @@
 		</jar>
 	</target>
 
-	<target name="build-src" depends="clean">
+	<target name="build-src" depends="clean-classes">
 		<javac srcdir="${src_dir}" destdir="${class_dir}" source="1.6" target="1.6" fork="true"/>
 	</target>
 
-	<target name="build-all" depends="jar,javadoc">
+	<target name="build-all-all-for-release" depends="clean-all,jar,htmldoc">
 	</target>
 
-	<target name="clean">
+	<target name="clean-classes">
 		<delete dir="${class_dir}"/>
 		<mkdir dir="${class_dir}"/>
 	</target>
 
-	<target name="clean-all" depends="clean">
+	<target name="clean-all" depends="clean-classes,package:clean">
 		<delete dir="${javadoc_dir}"/>
 		<delete dir="${htmldoc_dir}"/>
 		<delete dir="${jar_dir}"/>
-	</target>
-
-	<target name="copy-resources">
-		<copy todir="${class_dir}">
-			<fileset dir="${src_dir}" excludes="**/*.java"/>
-		</copy>
 	</target>
 
 	<target name="javadoc">
@@ -124,50 +124,58 @@
 	<!-- Release packaging -->
 	
 	<target name="package:clean">
-		<delete file="${basedir}/../${app_name}-${app_ver}-bin.tar.gz"/>
-		<delete file="${basedir}/../${app_name}-${app_ver}-src.tar.gz"/>
-		<delete file="${basedir}/../${app_name}-${app_ver}-bin.tar"/>
-		<delete file="${basedir}/../${app_name}-${app_ver}-src.tar"/>
+		<delete dir="${package}"/>
+		<mkdir dir="${package:bin}"/>
+		<mkdir dir="${package:src}"/>
 	</target>
-	
-	<!-- - - - - - - - - - - - - - - - - - 
-          target: replace:md5                      
-         - - - - - - - - - - - - - - - - - -->
-    <target name="replace:md5">
-		<!-- the package-md5-bin property mustn't be set above !! -->
-		<checksum file="${basedir}/../${app_name}-${app_ver}-bin.tar.gz" property="package-md5-bin"/>
-		<exec executable="${basedir}/build/replace_md5.sh">
-			<arg value="${package-md5-bin}"/>
-			<arg value="../../arch-pkgbuild/PKGBUILD"/>
-		</exec>	
-    </target>
 
-	<target name="package:bin">
-		<delete file="${basedir}/../${app_name}-${app_ver}-bin.tar.gz"/>
-		<tar compression="gzip" destfile="${basedir}/../${app_name}-${app_ver}-bin.tar.gz">
-			<tarfileset dir="bin" filemode="755" prefix="${app_name}-${app_ver}-bin/bin" />
-			<tarfileset dir="jar" prefix="${app_name}-${app_ver}-bin/jar" />
-			<tarfileset dir="examples" prefix="${app_name}-${app_ver}-bin/examples" />
-			<tarfileset dir="htmldoc" prefix="${app_name}-${app_ver}-bin/htmldoc" />
-			<tarfileset file="license.txt" prefix="${app_name}-${app_ver}-bin" />
-			<tarfileset file="authors.txt" prefix="${app_name}-${app_ver}-bin" />
-			<tarfileset file="RTFM.txt" prefix="${app_name}-${app_ver}-bin" />
-		</tar>
-		<antcall target="replace:md5"/>
+	<!-- 	Package means put all the files together in one directory which
+	 		will be the base for the release process.
+	-->
+	<target name="package" depends="build-all-all-for-release,package:clean,package:dist:bin,package:dist:src,releases">
+		<!--
+			<ant antfile="${basedir}/releases/build.xml" target="release" inheritrefs="true"/>
+		-->
 	</target>
 	
-	<target name="package:src" depends="htmldoc">
-		<delete file="${basedir}/../${app_name}-${app_ver}-src.tar.gz"/>
-		<tar compression="gzip" destfile="${basedir}/../${app_name}-${app_ver}-src.tar.gz">
-			<tarfileset dir="bin" filemode="755" prefix="${app_name}-${app_ver}-src/bin" />
-			<tarfileset dir="examples" prefix="${app_name}-${app_ver}-src/examples" />
-			<tarfileset dir="src" prefix="${app_name}-${app_ver}-src/src" />
-			<tarfileset dir="htmldoc" prefix="${app_name}-${app_ver}-src/htmldoc" />
-			<tarfileset file="build.xml" prefix="${app_name}-${app_ver}-src" />
-			<tarfileset file="license.txt" prefix="${app_name}-${app_ver}-src" />
-			<tarfileset file="authors.txt" prefix="${app_name}-${app_ver}-src" />
-			<tarfileset file="RTFM.txt" prefix="${app_name}-${app_ver}-src" />
-		</tar>
-		<checksum file="${basedir}/../${app_name}-${app_ver}-src.tar.gz" property="package-md5-src"/>
+	<target name="releases" depends="release">
 	</target>
+	
+	<target name="package:dist:bin">
+		<copy todir="${package:bin}/doc/htmldoc">
+			<fileset dir="htmldoc"/>
+		</copy>
+		<copy todir="${package:bin}/doc/examples">
+			<fileset dir="examples"/>
+		</copy>
+		<copy todir="${package:bin}/jar">
+			<fileset dir="jar"/>
+		</copy>
+		<copy todir="${package:bin}/bin">
+			<fileset dir="bin"/>
+		</copy>
+		<copy file="readme.txt" todir="${package:bin}"/>
+		<copy file="authors.txt" todir="${package:bin}"/>
+		<copy file="license.txt" todir="${package:bin}"/>
+	</target>
+
+	<target name="package:dist:src">
+		<copy todir="${package:src}/doc/htmldoc">
+			<fileset dir="htmldoc"/>
+		</copy>
+		<copy todir="${package:src}/doc/examples">
+			<fileset dir="examples"/>
+		</copy>
+		<copy todir="${package:src}/src">
+			<fileset dir="src"/>
+		</copy>
+		<copy todir="${package:src}/bin">
+			<fileset dir="bin"/>
+		</copy>
+		<copy file="readme.txt" todir="${package:src}"/>
+		<copy file="authors.txt" todir="${package:src}"/>
+		<copy file="license.txt" todir="${package:src}"/>
+		<copy file="build.xml" todir="${package:src}"/>
+	</target>
+
 </project>

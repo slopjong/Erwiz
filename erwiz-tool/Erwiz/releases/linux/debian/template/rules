@@ -1,0 +1,14 @@
+#!/usr/bin/make -f
+
+clean:
+	dh_testdir
+	dh_testroot
+	dh_clean
+
+binary:
+	dh_testdir
+	dh_testroot
+	dh_md5sums
+	dh_builddeb
+
+.PHONY: clean binary

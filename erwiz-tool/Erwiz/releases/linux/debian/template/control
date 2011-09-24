@@ -1,0 +1,21 @@
+Source: erwiz
+Section: misc
+Priority: optional
+Maintainer: Romain Schmitz <slopjong@hackerspace.lu>
+Build-Depends: debhelper (>> 7)
+#Build-Depends-Indep: default-jdk
+Standards-Version: 3.8.3
+Homepage: http://erwiz.org
+
+Package: erwiz
+Architecture: all
+Depends: default-jre-headless,graphviz
+Description: A lightweight tool to convert text-based entity-relationship models to images.
+ Erwiz offers a simple syntax to describe a text-based  entity-relationship 
+ model which can be converted to an image of one of these types:
+ .
+    bmp canon cmap cmapx cmapx_np dot eps fig gd gd2 gif gv 
+    ico imap imap_np ismap jpe jpeg jpg pdf plain plain-ext 
+    png ps ps2 svg svgz tif tiff tk vml vmlz vrml wbmp x11 
+    xdot xlib
+
