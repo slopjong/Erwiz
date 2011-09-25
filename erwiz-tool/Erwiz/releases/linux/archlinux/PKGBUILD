@@ -8,7 +8,6 @@ url="http://erwiz.org"
 license=('custom:BSD')
 depends=('java-runtime' 'graphviz')
 changelog=${pkgname}.changelog
-install=${pkgname}.install
 source=(http://erwiz.de/download/${pkgname}-${pkgver}-bin.tar.gz)
 #source=(${pkgname}-${pkgver}-bin.tar.gz)
 md5sums=(cf25f05c8462e5f80e7b16f15c76ff4e)
