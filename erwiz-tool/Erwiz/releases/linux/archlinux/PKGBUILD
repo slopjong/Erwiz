@@ -1,7 +1,7 @@
 # Maintainer: Romain Schmitz <slopjong [[at]] hackerspace [[dot]] lu>
 pkgname=erwiz
 pkgver=(0.9.0)
-pkgrel=2
+pkgrel=3
 pkgdesc="A lightweight tool to create easily entity-relationship models."
 arch=('i686' 'x86_64')
 url="http://erwiz.org"
@@ -10,7 +10,7 @@ depends=('java-runtime' 'graphviz')
 changelog=
 source=(http://erwiz.de/download/${pkgname}-${pkgver}-bin.tar.gz)
 #source=(${pkgname}-${pkgver}-bin.tar.gz)
-md5sums=(5ce596f40d263dd9950f7321d100c816)
+md5sums=(5bed6459087063b3fced39c9f9cecf0e)
 
 package() {
   

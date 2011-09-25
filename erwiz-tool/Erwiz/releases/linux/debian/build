@@ -1,0 +1,43 @@
+#!/bin/bash
+
+init()
+{
+	ERWIZ_HOME=$(pwd)
+	PACKAGE_HOME=${ERWIZ_HOME}/package
+	BUILD_PATH=`readlink -f $0`
+	BUILD_PATH=`dirname $BUILD_PATH`
+	cd $BUILD_PATH
+
+	# if the last property has not newline it's not read
+	#while IFS=$'\r=' read -r key value _; 
+	#do 
+	#	case $key in 
+	#		app.name*) appname=$value;; 
+	#		app.version) appversion=$value;; 
+	#	esac; 
+	#done < ${ERWIZ_HOME}/app_info.properties; 
+	#echo "$appname-$appversion"	
+	
+	app_name="$(sed '/^\#/d' ${ERWIZ_HOME}/app_info.properties | grep 'app.name'  | tail -n 1 | cut -d "=" -f2-)"
+	app_version="$(sed '/^\#/d' ${ERWIZ_HOME}/app_info.properties | grep 'app.version'  | tail -n 1 | cut -d "=" -f2-)"
+}
+
+clean()
+{
+	echo "clean() to be implemented"
+}
+
+package()
+{
+	echo "package() to be implemented"
+}
+
+post_clean()
+{
+	echo "post_clean() to be implemented"
+}
+
+init
+clean
+package
+post_clean

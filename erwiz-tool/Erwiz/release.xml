@@ -15,107 +15,23 @@
 	<property name="releasedir:opensuse" value="${releasedir:linux}/opensuse"/>
 	<property name="releasedir:windows" value="${releasedir}/windows"/>
 	<property name="releasedir:mac" value="${releasedir}/mac"/>
-
-	<!--
-	<target name="echo">
-		<echo message="${releasedir}"></echo>
-		<echo message="${app_name}"></echo>
-		<echo message="${app_ver}"></echo>
-		<echo message="${releasedir:single}"></echo>
-		<echo message="${releasedir:archlinux}"></echo>
-		<echo message="${releasedir:debian}"></echo>
-	</target>
-	-->
 	
-	<target name="release:clean">
-		<!--
-		<delete dir="${releasedir:single}"/>
-		<mkdir dir="${releasedir:single}"/>
-		-->
-	</target>
-		
-	<target name="release" depends="release:clean">
+	<target name="release">
 		<antcall target="release:single" />
 		<antcall target="release:archlinux" />
+		<antcall target="release:debian" />
 	</target>
-
-	<!--	##############
-			SINGLE RELEASE
-			############## -->
-
-	<target name="release:single2">
-		
-		<tar compression="gzip" destfile="${releasedir:single}/${app_name}-${app_ver}-bin.tar.gz">
-			<!-- the files are defined seperately because bin needs to retain the file permissions -->
-			<tarfileset dir="${package:bin}/bin" filemode="755" prefix="${app_name}-${app_ver}-bin/bin" />
-			<tarfileset dir="${package:bin}/jar" prefix="${app_name}-${app_ver}-bin/jar" />
-			<tarfileset dir="${package:bin}/doc" prefix="${app_name}-${app_ver}-bin/doc" /> 
-			<tarfileset file="${package:bin}/license.txt" prefix="${app_name}-${app_ver}-bin" />
-			<tarfileset file="${package:bin}/authors.txt" prefix="${app_name}-${app_ver}-bin" />
-			<tarfileset file="${package:bin}/readme.txt" prefix="${app_name}-${app_ver}-bin" />
-		</tar>
-	</target>
-		
+	
 	<target name="release:single">
-		<!-- the binary distribution -->
-		<tar compression="gzip" destfile="${releasedir:single}/${app_name}-${app_ver}-bin.tar.gz">
-			<!-- the files are defined seperately because bin needs to retain the file permissions -->
-			<tarfileset dir="${package:bin}/bin" filemode="755" prefix="${app_name}-${app_ver}-bin/bin" />
-			<tarfileset dir="${package:bin}/jar" prefix="${app_name}-${app_ver}-bin/jar" />
-			<tarfileset dir="${package:bin}/doc" prefix="${app_name}-${app_ver}-bin/doc" /> 
-			<tarfileset file="${package:bin}/license.txt" prefix="${app_name}-${app_ver}-bin" />
-			<tarfileset file="${package:bin}/authors.txt" prefix="${app_name}-${app_ver}-bin" />
-			<tarfileset file="${package:bin}/readme.txt" prefix="${app_name}-${app_ver}-bin" />
-		</tar>
-		<!-- the source distribution -->
-		<tar compression="gzip" destfile="${releasedir:single}/${app_name}-${app_ver}-src.tar.gz">
-			<!-- the files are defined seperately because bin needs to retain the file permissions -->
-			<tarfileset dir="${package:src}/bin" filemode="755" prefix="${app_name}-${app_ver}-src/bin" />
-			<tarfileset dir="${package:src}/doc" prefix="${app_name}-${app_ver}-src/doc" />
-			<tarfileset dir="${package:src}/src" prefix="${app_name}-${app_ver}-src/src" />
-			<tarfileset file="${package:src}/build.xml" prefix="${app_name}-${app_ver}-src" />
-			<tarfileset file="${package:src}/license.txt" prefix="${app_name}-${app_ver}-src" />
-			<tarfileset file="${package:src}/authors.txt" prefix="${app_name}-${app_ver}-src" />
-			<tarfileset file="${package:src}/readme.txt" prefix="${app_name}-${app_ver}-src" />
-		</tar>
+		<exec executable="${releasedir:single}/build"/>
 	</target>
 	
-	<!--	#############
-			ARCH LINUX
-			############# -->
-	
-    <target name="replace:md5">
-		<!-- the package-md5-bin property mustn't be set above !! -->
-		<checksum file="${releasedir:single}/${app_name}-${app_ver}-bin.tar.gz" property="package-md5-bin"/>
-		<exec executable="${releasedir:archlinux}/replace_md5.sh">
-			<arg value="${package-md5-bin}"/>
-			<arg value="${releasedir:archlinux}/PKGBUILD"/>
-		</exec>
-    </target>
-    	
-	<target name="replace:version">
-		<exec executable="${releasedir:archlinux}/replace_version_number.sh">
-			<arg value="${app_ver}"/>
-			<arg value="${releasedir:archlinux}/PKGBUILD"/>
-		</exec>
+	<target name="release:archlinux">
+		<exec executable="${releasedir:archlinux}/build"/>
 	</target>
 	
-	
-	<target name="release:archlinux" depends="replace:md5,replace:version">
-		<exec executable="${releasedir:archlinux}/replace_version_number.sh">
-			<arg line="${releasedir:archlinux}"/>
-		</exec>
-		<exec executable="make">
-			<arg value="-f"/>
-			<arg value="${releasedir:archlinux}/Makefile"/>
-			<arg value="release-from-ant"/>
-		</exec>
-	</target>
-	
-	<!--	#############
-			DEBIAN LINUX
-			############# -->
-    <target name="release:debian" description="Creates the Debian package.">
+    <target name="release:debian">
+    	<exec executable="${releasedir:debian}/build"/>
     </target>
 
 </project>
