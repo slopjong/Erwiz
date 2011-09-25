@@ -6,12 +6,6 @@
 
 	* erwiz.changelog :
 	Added to keep track of changes.
-
-	* erwiz.install :
-	Added to remove the /usr/share/java/erwiz-0.9.0 directory which could
-	be still since it wasn't completely removed by the 0.9.0-2 package
-	because of a symbolic link in /usr/share/doc/erwiz pointing to 
-	/usr/share/java/erwiz-0.9.0/htmldoc .
 	
 2011-09-01 Romain Schmitz <slopjong@hackerspace.lu>
 
