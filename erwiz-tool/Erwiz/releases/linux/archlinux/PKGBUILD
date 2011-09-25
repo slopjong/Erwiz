@@ -2,7 +2,7 @@
 pkgname=erwiz
 pkgver=(0.9.0)
 pkgrel=3
-pkgdesc="A lightweight tool to create easily entity-relationship models."
+pkgdesc="A lightweight tool to convert text-based entity-relationship models to images."
 arch=('i686' 'x86_64')
 url="http://erwiz.org"
 license=('custom:BSD')
@@ -10,7 +10,7 @@ depends=('java-runtime' 'graphviz')
 changelog=
 source=(http://erwiz.de/download/${pkgname}-${pkgver}-bin.tar.gz)
 #source=(${pkgname}-${pkgver}-bin.tar.gz)
-md5sums=(5bed6459087063b3fced39c9f9cecf0e)
+md5sums=(cf25f05c8462e5f80e7b16f15c76ff4e)
 
 package() {
   
