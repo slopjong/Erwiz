@@ -1,0 +1,3 @@
+post_remove() {
+	rm -rf /usr/share/java/erwiz-0.9.0*
+}
