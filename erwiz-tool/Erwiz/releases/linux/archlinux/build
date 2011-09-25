@@ -24,7 +24,8 @@ init()
 
 clean()
 {
-	rm -rf ${app_name}* pkg src
+	echo "rm -rf ${app_name}-${app_version}-bin* pkg src"
+	rm -rf ${app_name}-${app_version}* pkg src
 }
 
 package()
@@ -43,6 +44,7 @@ package()
 
 post_clean()
 {
+	echo "rm -rf ${app_name}-${app_version}-bin* pkg src"
 	rm -rf ${app_name}-${app_version}-bin* pkg src
 }
 
