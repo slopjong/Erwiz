@@ -25,16 +25,28 @@ init()
 clean()
 {
 	echo "clean() to be implemented"
+	rm -rf ${app_name}*
 }
 
 package()
 {
-	echo "package() to be implemented"
+	#echo "package() to be implemented"
+	
+	echo "cp -R ${PACKAGE_HOME}/bin ${app_name}"
+	cp -R ${PACKAGE_HOME}/bin ${app_name}-${app_version}
+	cp -R template ${app_name}-${app_version}
+	cd ${app_name}-${app_version}
+	mv template debian
+	mv license.txt copyright
+	mv readme.txt readme
+	mv authors.txt authors
+	fakeroot dh binary-indep
 }
 
 post_clean()
 {
-	echo "post_clean() to be implemented"
+	cd $BUILD_PATH
+	rm -rf ${app_name}-${app_version}
 }
 
 init
