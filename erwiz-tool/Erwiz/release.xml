@@ -17,7 +17,10 @@
 	<property name="releasedir:mac" value="${releasedir}/mac"/>
 	
 	<target name="release">
-		<antcall target="release:single" />
+		<!-- 	release:single is executed by the build.xml to not creating
+				the tarball which changes the md5 checksum every time
+				this task is executed. release:single is required to be
+				executed before other release tasks. -->
 		<antcall target="release:archlinux" />
 		<antcall target="release:debian" />
 	</target>

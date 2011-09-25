@@ -29,9 +29,7 @@ clean()
 
 package()
 {
-	cp -R ${PACKAGE_HOME}/bin ${app_name}-${app_version}-bin
-	tar -pczf ${app_name}-${app_version}-bin.tar.gz ${app_name}-${app_version}-bin
-	
+	cp ../../single/${app_name}-${app_version}-bin.tar.gz .	
 	md5=$(md5sum ${app_name}-${app_version}-bin.tar.gz | cut -d ' ' -f 1)
 	
 	echo "sed -i \"s/^md5sums=(\(.*\))/\md5sums=(${md5})/g\" PKGBUILD"

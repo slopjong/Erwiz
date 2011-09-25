@@ -108,6 +108,7 @@
 	 		will be the base for the release process.
 	-->
 	<target name="package" depends="build-all-all-for-release,package:clean,package:dist:bin,package:dist:src">
+		<ant antfile="release.xml" target="release:single" />
 	</target>
 	
 	<target name="package:dist:bin">
