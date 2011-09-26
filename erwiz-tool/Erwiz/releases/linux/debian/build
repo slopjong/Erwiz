@@ -28,6 +28,8 @@ clean()
 	rm -rf ${app_name}*
 }
 
+# Meet the guidelines here:
+# http://www.debian.org/doc/debian-policy/
 package()
 {
 	#echo "package() to be implemented"
