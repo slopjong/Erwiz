@@ -1,0 +1,63 @@
+.TH erwiz 1 "October 2011"
+.SH NAME
+erwiz \- convert the text-based entity-relationship model to an image
+.SH SYNOPSIS
+.B erwiz
+.RI [ OPTIONS...]
+.RI INFILE
+.RI OUTFILE
+.SH DESCRIPTION
+.\" Add any additional description here
+.P
+Convert INFILE to OUTFILE.
+.P
+INFILE has to be a text-based entity-relationship model with the erwiz syntax as described in \fI/usr/share/doc/erwiz/htmldoc/index.html\fR.
+.PP
+OUTFILE is the image file which Erwiz creates while it's rendering the model. Common image types are \fIjpg\fR, \fIpng\fR, \fIpdf\fR and \fIsvg\fR. Other available types are:
+.P
+.RS
+bmp canon cmap cmapx cmapx_np dot eps fig gd gd2 gif gv ico imap imap_np ismap jpe jpeg plain plain-ext ps ps2 svgz tif tiff tk vml vmlz vrml wbmp x11 xdot xlib 
+.RE
+.SH OPTIONS
+.TP
+\fB\-h\fR
+Print the usage.
+.TP
+\fB\-n notation\fR
+Use this ERD notation style for the rendering. Available notations are id (default), ie-strict and idef1x.
+.TP
+\fB\-f font\fR
+Use this font for the rendering.
+.TP
+\fB\-c color\fR
+Use color as the default entity color. Available colors are white (default), red, blue, green, yellow and orange.
+.SH EXAMPLES
+Convert the model to the PNG raster image in the same directory:
+.P
+.RS
+erwiz model.txt erd.png
+.RE
+.P
+Convert the model to a SVG vector graphic in the same directory:
+.P
+.RS
+erwiz model.txt erd.svg
+.RE
+
+Convert the model to a PDF vector graphic in the same directory and use red as the default entity background color:
+.P
+.RS
+erwiz -c red model.txt erd.pdf
+.RE
+
+Convert the erwiz example model to a PNG raster image in the tmp directory:
+.P
+.RS
+erwiz /usr/share/doc/erwiz/examples/example1.txt /tmp/erd.png
+.RE
+.SH AUTHOR
+Erwiz was forked of Erviz which was written by Mitsuru Kono.
+.P
+This manual page was written by Romain Schmitz who is the main maintainer of the Erwiz project.
+.SH "REPORTING BUGS"
+Report erwiz bugs to <https://github.com/slopjong/Erwiz/issues/>. Alternatively you can post a comment on the maintainer's blog <http://slopjong.de/2011/02/26/whats-erviz/>.
