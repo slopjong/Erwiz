@@ -1,0 +1,11 @@
+Document: erwiz
+Title: Erwiz html documentation
+Author: Romain Schmitz, Mitsuru Kono
+Abstract: The erwiz documentation
+ describes how entity-relationship models are created using
+ the erwiz syntax.
+Section: Editors
+
+Format: HTML
+Index: /usr/share/doc/erwiz/htmldoc/index.html
+Files: /usr/share/doc/erwiz/htmldoc/*.html /usr/share/doc/erwiz/htmldoc/*.shtml /usr/share/doc/erwiz/htmldoc/references/*.shtml /usr/share/doc/erwiz/htmldoc/samples/*.shtml
