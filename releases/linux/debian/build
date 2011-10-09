@@ -24,7 +24,7 @@ init()
 
 clean()
 {
-	echo "clean() to be implemented"
+	#echo "clean() to be implemented"
 	rm -rf ${app_name}*
 }
 
@@ -42,7 +42,9 @@ package()
 	mv license.txt copyright
 	mv readme.txt readme
 	mv authors.txt authors
-	fakeroot dh binary-indep
+	#fakeroot dh binary-indep
+	#debuild -S
+	#dpkg-buildpackage
 }
 
 post_clean()
