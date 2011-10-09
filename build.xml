@@ -116,7 +116,8 @@
 			<fileset dir="htmldoc"/>
 		</copy>
 		<mkdir dir="${package:bin}/manpage"/>
-		<gzip src="docs/erwiz.1" destfile="${package:bin}/manpage/erwiz.1.gz"/>
+		<!--<gzip src="docs/erwiz.1" destfile="${package:bin}/manpage/erwiz.1.gz"/>-->
+		<copy file="docs/erwiz.1" todir="${package:bin}/manpage"/>
 		<copy todir="${package:bin}/doc/examples">
 			<fileset dir="examples"/>
 		</copy>
