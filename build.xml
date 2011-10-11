@@ -142,6 +142,8 @@
 		<copy todir="${package:src}/doc/examples">
 			<fileset dir="examples"/>
 		</copy>
+		<mkdir dir="${package:bin}/manpage"/>
+		<copy file="docs/erwiz.1" todir="${package:src}/manpage"/>
 		<copy todir="${package:src}/src">
 			<fileset dir="src"/>
 		</copy>

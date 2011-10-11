@@ -1,8 +1,8 @@
 Source: erwiz
 Section: misc
 Priority: optional
-Maintainer: Romain Schmitz <slopjong@hackerspace.lu>
-Build-Depends: debhelper (>> 7)
+Maintainer: Romain Schmitz <erwiz@slopjong.de>
+Build-Depends: debhelper (>> 7), ant, default-jkd
 #Build-Depends-Indep: default-jdk
 Standards-Version: 3.8.3
 Homepage: http://erwiz.org
