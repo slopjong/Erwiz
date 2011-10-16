@@ -43,8 +43,19 @@ fi
 # http://stackoverflow.com/questions/760110/can-i-get-the-absolute-path-to-the-current-script-in-korn-shell
 # http://stackoverflow.com/questions/1055671/how-can-i-get-the-behavior-of-gnus-readlink-f-on-a-mac
 
+case "$(uname)" in
+	Linux)
+		READLINK="readlink"
+		;;
+	Darwin)
+		READLINK="greadlink"
+		;;
+	*)
+		READLINK="readlink"
+esac
+
 #COMMAND_PATH=${PWD}/`dirname $0`
-COMMAND_PATH=`readlink -f $0`
+COMMAND_PATH=`${READLINK} -f $0`
 COMMAND_PATH=`dirname $COMMAND_PATH`
  
 OUT_FILE=${@:$(($#)):1}
