@@ -1,0 +1,42 @@
+# $Id$
+
+PortSystem          1.0
+
+name                erwiz
+version             0.9.0
+categories          graphics
+platforms           darwin
+license             BSD
+maintainers         slopjong
+homepage            http://erwiz.org
+master_sites        ${homepage}/download/
+distfiles			${distname}${extract.suffix}
+
+description         Converts a text-based entity-relationship model to an image
+
+long_description    Erwiz converts a text-based entity-relationship model to an image. It \
+					offers a very simple syntax and has low editor requirements. Any text \
+					editor can be used to write an erwiz model. Common raster and vector image \
+					types like png, jpg, pdf and svg are supported but also: \
+					\
+					bmp canon cmap cmapx cmapx_np dot eps fig gd gd2 gif gv \
+					ico imap imap_np ismap jpe jpeg plain plain-ext ps ps2 \
+					svgz tif tiff tk vml vmlz vrml wbmp x11 xdot xlib
+
+
+checksums			${distname}${extract.suffix} \
+                        md5     ff7c30327867e0935db755ebb62391d4 \
+                        sha1    bc061c3a1cdc9cfec0873beb8ab7dd266f93d8de
+
+depends_lib         port:apache-ant \
+                    port:tcl \
+                    port:zlib
+
+configure.args      --enable-perl-site-install \
+                    --mandir=${prefix}/share/man
+
+platforms			darwin
+
+configure {}
+build {}
+destroot {}
