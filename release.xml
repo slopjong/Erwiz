@@ -36,5 +36,9 @@
     <target name="release:debian">
     	<exec executable="${releasedir:debian}/build"/>
     </target>
+	
+    <target name="release:mac">
+    	<exec executable="${releasedir:mac}/build"/>
+    </target>
 
 </project>
