@@ -2,8 +2,7 @@ Source: erwiz
 Section: misc
 Priority: optional
 Maintainer: Romain Schmitz <erwiz@slopjong.de>
-Build-Depends: debhelper (>> 7), ant, default-jkd
-#Build-Depends-Indep: default-jdk
+Build-Depends: debhelper (>> 7), ant, default-jdk
 Standards-Version: 3.8.3
 Homepage: http://erwiz.org
 
