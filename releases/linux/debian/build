@@ -50,14 +50,18 @@ package()
 	
 	#fakeroot dh binary-indep
 	#debuild -S
-	#dpkg-buildpackage
+	dpkg-buildpackage
+	
+	# check the package with lintian
+	cd ..
+	lintian -i -I ${app_name}_${app_version}-*_all.deb
 }
 
 post_clean()
 {
-	echo "Post-cleaning ..."
+	#echo "Post-cleaning ..."
 	#cd $BUILD_PATH
-	#rm -rf ${app_name}-${app_version}
+	rm -rf ${app_name}-${app_version}
 }
 
 init
