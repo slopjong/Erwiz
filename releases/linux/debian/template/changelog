@@ -1,5 +1,5 @@
 erwiz (0.9.0-1) unstable; urgency=low
 
-  * Initial release.
+  * Initial release (Closes: #645091)
 
- -- Romain Schmitz <slopjong@hackerspace.lu>  Thu, 22 Sep 2011 08:05:02 -0500
+ -- Romain Schmitz <erwiz@slopjong.de>  Sat, 22 Oct 2011 22:59:28 +0200
