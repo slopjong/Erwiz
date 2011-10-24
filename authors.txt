@@ -9,4 +9,4 @@ Mitsuru Kono
 	Authored the Erviz code base and worked on the English and Japanese translations.
 	
 Romain Schmitz
-	Maintains the current Erwiz project and Linux packages. 
+	Maintains the current Erwiz project and Linux packages.
