@@ -130,9 +130,9 @@
 		<exec executable="chmod">
 			<arg line="-R 755 ${package:bin}/bin"/>
 		</exec>
-		<copy file="readme.txt" todir="${package:bin}"/>
-		<copy file="authors.txt" todir="${package:bin}"/>
-		<copy file="license.txt" todir="${package:bin}"/>
+		<copy file="README" todir="${package:bin}"/>
+		<copy file="AUTHORS" todir="${package:bin}"/>
+		<copy file="LICENSE" todir="${package:bin}"/>
 	</target>
 
 	<target name="package:dist:src">
@@ -153,9 +153,9 @@
 		<exec executable="chmod">
 			<arg line="-R 755 ${package:src}/bin"/>
 		</exec>
-		<copy file="readme.txt" todir="${package:src}"/>
-		<copy file="authors.txt" todir="${package:src}"/>
-		<copy file="license.txt" todir="${package:src}"/>
+		<copy file="README" todir="${package:src}"/>
+		<copy file="AUTHORS" todir="${package:src}"/>
+		<copy file="LICENSE" todir="${package:src}"/>
 		<copy file="build.xml" todir="${package:src}"/>
 		<copy file="properties.xml" todir="${package:src}"/>
 		<copy file="app_info.properties" todir="${package:src}"/>
