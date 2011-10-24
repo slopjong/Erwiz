@@ -157,5 +157,6 @@
 		<copy file="authors.txt" todir="${package:src}"/>
 		<copy file="license.txt" todir="${package:src}"/>
 		<copy file="build.xml" todir="${package:src}"/>
+		<copy file="properties.xml" todir="${package:src}"/>
 	</target>
 </project>
