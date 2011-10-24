@@ -49,7 +49,7 @@ package()
 	
 	# check the package with lintian
 	cd ..
-	lintian -i -I ${app_name}_${app_version}-*_all.deb
+	lintian -i -IE --pedantic --show-overrides ${app_name}_${app_version}-*_all.deb
 }
 
 post_clean()
