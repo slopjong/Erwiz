@@ -4,3 +4,6 @@ JAVA_HOME=/usr/lib/jvm/default-java
 
 %:
 	dh $@ --with javahelper
+
+override_dh_compress:
+	dh_compress -X.shtml
