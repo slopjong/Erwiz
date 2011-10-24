@@ -1,0 +1,4 @@
+After you installed the developer toolchain go to the erwiz root directory and execute:
+
+* ant package => compile and create the package & release files in <root>/package/{src,bin} and <root>/releases/single/
+* ant -f release.xml release:<linux> => create a linux package, replace <linux> by the distribution you'd like to package for (e.g. archlinux, debian, ...)
