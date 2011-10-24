@@ -34,14 +34,20 @@ package()
 {
 	#echo "package() to be implemented"
 	
-	echo "cp -R ${PACKAGE_HOME}/bin ${app_name}"
-	cp -R ${PACKAGE_HOME}/bin ${app_name}-${app_version}
-	cp -R template ${app_name}-${app_version}
+	# prepare the directory structure for dpkg-buildpackage 
+	cp ../../single/erwiz-0.9.0.tar.gz .
+	cp erwiz-0.9.0.tar.gz erwiz_0.9.0.orig.tar.gz
+	cp -R ${PACKAGE_HOME}/src ${app_name}-${app_version}
+	cp -R template ${app_name}-${app_version}/debian
+
+	# go to the source directory (where debian resides in)
 	cd ${app_name}-${app_version}
-	mv template debian
-	mv license.txt copyright
+	
+	#mv template debian
+	#mv license.txt copyright
 	mv readme.txt readme
 	mv authors.txt authors
+	
 	#fakeroot dh binary-indep
 	#debuild -S
 	#dpkg-buildpackage
@@ -49,8 +55,9 @@ package()
 
 post_clean()
 {
-	cd $BUILD_PATH
-	rm -rf ${app_name}-${app_version}
+	echo "Post-cleaning ..."
+	#cd $BUILD_PATH
+	#rm -rf ${app_name}-${app_version}
 }
 
 init
