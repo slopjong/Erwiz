@@ -1,6 +1,6 @@
 This work was packaged for Debian by:
 
-    Romain Schmitz <erwiz@slopjong.de> on Sat, 22 Oct 2011 22:59:28 +0200
+    Romain Schmitz <erwiz@slopjong.de> on Sat, 24 Oct 2011 16:59:28 +0200
 
 It was downloaded from:
 
@@ -43,12 +43,6 @@ Copyright:
 The Debian packaging is:
 
     Copyright (C) 2011 Romain Schmitz <erwiz@slopjong.de>
-
-# Please chose a license for your packaging work. If the program you package
-# uses a mainstream license, using the same license is the safest choice.
-# Please avoid to pick license terms that are more restrictive than the
-# packaged work, as it may make Debian's contributions unacceptable upstream.
-# If you just want it to be GPL version 3, leave the following lines in.
 
 and is licensed under the GPL version 3,
 see "/usr/share/common-licenses/GPL-3".

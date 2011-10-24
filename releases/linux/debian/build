@@ -43,11 +43,6 @@ package()
 	# go to the source directory (where debian resides in)
 	cd ${app_name}-${app_version}
 	
-	#mv template debian
-	#mv license.txt copyright
-	#mv readme.txt readme
-	#mv authors.txt authors
-	
 	#fakeroot dh binary-indep
 	#debuild -S
 	dpkg-buildpackage
@@ -60,7 +55,6 @@ package()
 post_clean()
 {
 	#echo "Post-cleaning ..."
-	#cd $BUILD_PATH
 	rm -rf ${app_name}-${app_version}
 }
 
