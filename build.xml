@@ -133,6 +133,7 @@
 		<copy file="README" todir="${package:bin}"/>
 		<copy file="AUTHORS" todir="${package:bin}"/>
 		<copy file="LICENSE" todir="${package:bin}"/>
+		<copy file="changelog" todir="${package:bin}"/>
 	</target>
 
 	<target name="package:dist:src">
@@ -159,6 +160,7 @@
 		<copy file="build.xml" todir="${package:src}"/>
 		<copy file="properties.xml" todir="${package:src}"/>
 		<copy file="app_info.properties" todir="${package:src}"/>
+		<copy file="changelog" todir="${package:src}"/>
 	</target>
 	
 	<!-- This clean target must be present to get the debian package created.
