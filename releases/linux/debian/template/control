@@ -2,13 +2,15 @@ Source: erwiz
 Section: misc
 Priority: extra
 Maintainer: Romain Schmitz <erwiz@slopjong.de>
-Build-Depends: debhelper (>= 7.0.50~), ant, default-jdk
-Standards-Version: 3.8.4
+Build-Depends: debhelper (>= 7.0.50~), javahelper (>=0.25)
+Build-Depends-Indep: default-jdk, ant
+Standards-Version: 3.9.1
 Homepage: http://erwiz.org
 
 Package: erwiz
 Architecture: all
-Depends: default-jre-headless, graphviz
+Depends: ${java:Depends}, ${misc:Depends}, graphviz
+Recommends: ${java:Recommends}
 Description: Converts a text-based entity-relationship model to an image
   Erwiz converts a text-based entity-relationship model to an image. It
   offers a very simple syntax and has low editor requirements. Any text 
