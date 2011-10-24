@@ -45,8 +45,8 @@ package()
 	
 	#mv template debian
 	#mv license.txt copyright
-	mv readme.txt readme
-	mv authors.txt authors
+	#mv readme.txt readme
+	#mv authors.txt authors
 	
 	#fakeroot dh binary-indep
 	#debuild -S

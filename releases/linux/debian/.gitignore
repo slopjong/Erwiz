@@ -1,4 +1,4 @@
 *.deb
 *.dsc
 *.changes
-erwiz*
+./erwiz*

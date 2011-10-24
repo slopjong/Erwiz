@@ -1,0 +1,12 @@
+# According to lintian's output
+#
+#    If the package is not maintained upstream or if upstream uses a
+#    distribution mechanism that cannot be meaningfully monitored by uscan
+#    and the Debian External Health Status project, please consider adding a
+#    debian/watch file containing only comments documenting the situation.
+#
+# it's mentioned here that the package maintainer is also the upstream's 
+# maintainer. The debian package is updated automatically by executing the
+# build script [0] as soon as there's a new version.
+#
+# [0] https://github.com/slopjong/Erwiz/blob/master/releases/linux/debian/build
