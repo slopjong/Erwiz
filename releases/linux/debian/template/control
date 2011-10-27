@@ -1,6 +1,6 @@
 Source: erwiz
-Section: misc
-Priority: extra
+Section: graphics
+Priority: optional
 Maintainer: Romain Schmitz <erwiz@slopjong.de>
 Build-Depends: debhelper (>= 7.0.50~), javahelper (>=0.25)
 Build-Depends-Indep: default-jdk, ant
